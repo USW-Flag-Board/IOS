@@ -21,6 +21,8 @@
 		2CE968F528EFBB1300E2D068 /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968F428EFBB1300E2D068 /* ProfileView.storyboard */; };
 		2CE968F928EFBB7F00E2D068 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968F828EFBB7F00E2D068 /* ProfileController.swift */; };
 		2CE968FD28EFBBD000E2D068 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968FC28EFBBD000E2D068 /* ProfileModel.swift */; };
+		53FD971828F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD971628F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.swift */; };
+		53FD971928F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53FD971728F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		2CE968FC28EFBBD000E2D068 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		2CE9690028EFBE1800E2D068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CE9690228EFBE1800E2D068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainView.storyboard; sourceTree = "<group>"; };
+		53FD971628F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoardSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		53FD971728F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BulletinBoardSelectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				2CE968EE28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard */,
+				53FD971628F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.swift */,
+				53FD971728F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.xib */,
 			);
 			path = BulletinBoard;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53FD971928F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.xib in Resources */,
 				2CDEAA7628EFC2AE00464E30 /* MainView.storyboard in Resources */,
 				2CDEAA7528EFC2AA00464E30 /* LaunchScreen.storyboard in Resources */,
 				2CE968EF28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard in Resources */,
@@ -276,6 +283,7 @@
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
 				2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */,
 				2CE968E528EFB88000E2D068 /* extension.swift in Sources */,
+				53FD971828F58F6B002F9190 /* BulletinBoardSelectionTableViewCell.swift in Sources */,
 				2CE968F928EFBB7F00E2D068 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
