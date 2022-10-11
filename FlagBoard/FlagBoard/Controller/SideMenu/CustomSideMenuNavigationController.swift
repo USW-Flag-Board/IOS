@@ -1,10 +1,11 @@
 import UIKit
 import SideMenu
 
-class SideMenuController: SideMenuNavigationController {
-    
+class CustomSideMenuNavigationController: SideMenuNavigationController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
 }
