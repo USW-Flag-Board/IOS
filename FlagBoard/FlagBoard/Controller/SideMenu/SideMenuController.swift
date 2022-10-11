@@ -1,7 +1,7 @@
 import UIKit
 import SideMenu
 
-class SideMenuController: SideMenuNavigationController {
+class SideMenuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

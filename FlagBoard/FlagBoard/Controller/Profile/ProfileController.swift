@@ -1,4 +1,5 @@
 import UIKit
+import SideMenu
 
 class ProfileController: UIViewController {
 
@@ -15,13 +16,15 @@ class ProfileController: UIViewController {
     }
     
     //MARK: Button Actions
-    
-    //MARK: Design Functions
-    
     @IBAction func didTabMenuButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SideMenuView", bundle: nil)
+        let sideMenuViewController: SideMenuController =
+            storyboard.instantiateViewController(withIdentifier: "SideMenuController") as!
+                                                                                SideMenuController
+        let menu = CustomSideMenuNavigationController(rootViewController: sideMenuViewController)
         
+        present(menu, animated: true, completion: nil)
     }
     
- 
-
+    //MARK: Design Functions
 }
