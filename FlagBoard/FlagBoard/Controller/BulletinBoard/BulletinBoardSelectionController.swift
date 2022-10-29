@@ -8,9 +8,9 @@ class BulletinBoardSelectionController: UIViewController{
     
     var boardNameList : [String] = ["!!공지!!", "정보게시판", "자유게시판", "동아리 이모저모", "Activity"]
     
-    //MARK: Properties
     
-    //MARK: Functions
+
+    
     private func registerXib(){
         
         //tableView에 cell 등록
@@ -19,7 +19,6 @@ class BulletinBoardSelectionController: UIViewController{
         boardSeletionTableview.register(nibName, forCellReuseIdentifier: "boardSelectionTableCell")
     }
         
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +51,25 @@ extension BulletinBoardSelectionController: UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: false)
+            
+
+            switch indexPath.row{
+            case 0:
+                
+                let sb = UIStoryboard(name: "Freeboard", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "Freeboard") as! FreeBoardViewController
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            default:
+                return
+            }
+        }
+     
 
 }
 
