@@ -9,6 +9,13 @@ import UIKit
 
 class FreeBoardXibViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var seenNumLabel: UILabel!
+    @IBOutlet weak var commentNumLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,24 +13,8 @@ class FreeBoardViewController: UIViewController {
     @IBOutlet weak var whatBoardLabel: UILabel!
     @IBOutlet weak var freeBoardTableView: UITableView!
     
-    struct Model {
-        let title: String
-        let writer: String
-        let date: String
-        let seenNum: Int
-        let commentNum: Int
-        
-        init(title: String, writer: String, date: String, seenNum: Int, commentNum: Int){
-            self.title = title
-            self.writer = writer
-            self.date = date
-            self.seenNum = seenNum
-            self.commentNum = commentNum
-        }
-    }
     
-    let dummyData = Model(title: "처음 뵙겠습니다.", writer: "홍길동", date: "2022.10.29", seenNum: 254, commentNum: 3)
-    
+
     
     private func registerXib(){
         
@@ -43,12 +27,38 @@ class FreeBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
     
 
     func setUpTableView(){
-        
+        freeBoardTableView.delegate = self
+        freeBoardTableView.dataSource = self
+        registerXib()
+        freeBoardTableView.separatorStyle = .none
     }
 
+}
+
+extension FreeBoardViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sampleData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = freeBoardTableView.dequeueReusableCell(withIdentifier: "freeBoardCell", for: indexPath) as! FreeBoardXibViewCell
+        
+        cell.titleLabel.text = sampleData[indexPath.row].title
+        cell.nameLabel.text = sampleData[indexPath.row].writer
+        cell.dateLabel.text = sampleData[indexPath.row].date
+        cell.seenNumLabel.text = sampleData[indexPath.row].seenNum
+        cell.commentNumLabel.text = sampleData[indexPath.row].commentNum
+        
+        return cell
+    }
+    
+    
 }
