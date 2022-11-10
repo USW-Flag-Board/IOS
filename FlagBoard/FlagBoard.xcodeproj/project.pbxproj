@@ -10,6 +10,9 @@
 		2CDEAA7528EFC2AA00464E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968FF28EFBE1800E2D068 /* LaunchScreen.storyboard */; };
 		2CDEAA7628EFC2AE00464E30 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9690128EFBE1800E2D068 /* MainView.storyboard */; };
 		2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */; };
+		2CDEAA7D28F59CB800464E30 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEAA7C28F59CB800464E30 /* SideMenuController.swift */; };
+		2CDEAA8228F59E2A00464E30 /* SideMenuView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDEAA8128F59E2A00464E30 /* SideMenuView.storyboard */; };
+		2CDEAA8428F5A9F500464E30 /* CustomSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEAA8328F5A9F500464E30 /* CustomSideMenuNavigationController.swift */; };
 		2CE85A1D28EA80FA00EC6016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85A1C28EA80FA00EC6016 /* AppDelegate.swift */; };
 		2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85A1E28EA80FA00EC6016 /* SceneDelegate.swift */; };
 		2CE85A2628EA80FB00EC6016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85A2528EA80FB00EC6016 /* Assets.xcassets */; };
@@ -21,10 +24,14 @@
 		2CE968F528EFBB1300E2D068 /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968F428EFBB1300E2D068 /* ProfileView.storyboard */; };
 		2CE968F928EFBB7F00E2D068 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968F828EFBB7F00E2D068 /* ProfileController.swift */; };
 		2CE968FD28EFBBD000E2D068 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968FC28EFBBD000E2D068 /* ProfileModel.swift */; };
+		67D648D92EE2EC96657AF68B /* Pods_FlagBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C451DCE60DB946DC375FED99 /* Pods_FlagBoard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2CDEAA7C28F59CB800464E30 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuController.swift; path = FlagBoard/Controller/SideMenu/SideMenuController.swift; sourceTree = SOURCE_ROOT; };
+		2CDEAA8128F59E2A00464E30 /* SideMenuView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuView.storyboard; sourceTree = "<group>"; };
+		2CDEAA8328F5A9F500464E30 /* CustomSideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		2CE85A1928EA80FA00EC6016 /* FlagBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE85A1C28EA80FA00EC6016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CE85A1E28EA80FA00EC6016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +47,9 @@
 		2CE968FC28EFBBD000E2D068 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		2CE9690028EFBE1800E2D068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CE9690228EFBE1800E2D068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainView.storyboard; sourceTree = "<group>"; };
+		403779DE585FDF34D23A003D /* Pods-FlagBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.release.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.release.xcconfig"; sourceTree = "<group>"; };
+		45BADE8B62D0B361CB0AA07E /* Pods-FlagBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.debug.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		C451DCE60DB946DC375FED99 /* Pods_FlagBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlagBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +57,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D648D92EE2EC96657AF68B /* Pods_FlagBoard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CDEAA7E28F59CC900464E30 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2CDEAA7C28F59CB800464E30 /* SideMenuController.swift */,
+				2CDEAA8328F5A9F500464E30 /* CustomSideMenuNavigationController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		2CDEAA7F28F59CD900464E30 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2CDEAA8028F59E0C00464E30 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2CDEAA8128F59E2A00464E30 /* SideMenuView.storyboard */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		2CE85A1028EA80FA00EC6016 = {
 			isa = PBXGroup;
 			children = (
 				2CE85A1B28EA80FA00EC6016 /* FlagBoard */,
 				2CE85A1A28EA80FA00EC6016 /* Products */,
+				46EA33E1708EAE83CB868B88 /* Pods */,
+				F4FBB76D4D53C07A223C8D48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +159,7 @@
 		2CE968EA28EFB9A000E2D068 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CDEAA8028F59E0C00464E30 /* SideMenu */,
 				2CE968FE28EFBE1800E2D068 /* Base.lproj */,
 				2CE968F328EFBA7500E2D068 /* Profile */,
 				2CE968F228EFBA5D00E2D068 /* BulletinBoard */,
@@ -131,9 +170,10 @@
 		2CE968EB28EFB9A500E2D068 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CDEAA7F28F59CD900464E30 /* TabBar */,
+				2CDEAA7E28F59CC900464E30 /* SideMenu */,
 				2CE968F728EFBB2700E2D068 /* BulletinBoard */,
 				2CE968F628EFBB1C00E2D068 /* Profile */,
-				2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,6 +235,23 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		46EA33E1708EAE83CB868B88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45BADE8B62D0B361CB0AA07E /* Pods-FlagBoard.debug.xcconfig */,
+				403779DE585FDF34D23A003D /* Pods-FlagBoard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F4FBB76D4D53C07A223C8D48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C451DCE60DB946DC375FED99 /* Pods_FlagBoard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CE85A2D28EA80FB00EC6016 /* Build configuration list for PBXNativeTarget "FlagBoard" */;
 			buildPhases = (
+				E91B7358151999E9B0D38F7C /* [CP] Check Pods Manifest.lock */,
 				2CE85A1528EA80FA00EC6016 /* Sources */,
 				2CE85A1628EA80FA00EC6016 /* Frameworks */,
 				2CE85A1728EA80FA00EC6016 /* Resources */,
+				4B9033979C788B745D46A0E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,12 +315,55 @@
 				2CDEAA7628EFC2AE00464E30 /* MainView.storyboard in Resources */,
 				2CDEAA7528EFC2AA00464E30 /* LaunchScreen.storyboard in Resources */,
 				2CE968EF28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard in Resources */,
+				2CDEAA8228F59E2A00464E30 /* SideMenuView.storyboard in Resources */,
 				2CE85A2628EA80FB00EC6016 /* Assets.xcassets in Resources */,
 				2CE968F528EFBB1300E2D068 /* ProfileView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B9033979C788B745D46A0E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlagBoard/Pods-FlagBoard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlagBoard/Pods-FlagBoard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlagBoard/Pods-FlagBoard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E91B7358151999E9B0D38F7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlagBoard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CE85A1528EA80FA00EC6016 /* Sources */ = {
@@ -273,10 +375,12 @@
 				2CE85A1D28EA80FA00EC6016 /* AppDelegate.swift in Sources */,
 				2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */,
 				2CE968E728EFB89200E2D068 /* network.swift in Sources */,
+				2CDEAA7D28F59CB800464E30 /* SideMenuController.swift in Sources */,
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
 				2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */,
 				2CE968E528EFB88000E2D068 /* extension.swift in Sources */,
 				2CE968F928EFBB7F00E2D068 /* ProfileController.swift in Sources */,
+				2CDEAA8428F5A9F500464E30 /* CustomSideMenuNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +522,7 @@
 		};
 		2CE85A2E28EA80FB00EC6016 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45BADE8B62D0B361CB0AA07E /* Pods-FlagBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -428,7 +533,6 @@
 				INFOPLIST_FILE = FlagBoard/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,6 +550,7 @@
 		};
 		2CE85A2F28EA80FB00EC6016 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 403779DE585FDF34D23A003D /* Pods-FlagBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,7 +561,6 @@
 				INFOPLIST_FILE = FlagBoard/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
