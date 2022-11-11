@@ -8,7 +8,7 @@
 
 ## API 명세서
 
----
+- 사이드 메뉴, https://github.com/jonkykong/SideMenu
 
 ## 코드 컨벤션 및 커밋 메시지 규칙
 
