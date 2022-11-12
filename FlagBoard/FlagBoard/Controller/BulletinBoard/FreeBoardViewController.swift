@@ -9,8 +9,8 @@ import UIKit
 
 class FreeBoardViewController: UIViewController {
 
-    @IBOutlet weak var whereLabel: UILabel!
-    @IBOutlet weak var whatBoardLabel: UILabel!
+    @IBOutlet weak var boardLocationLabel: UILabel!
+    @IBOutlet weak var boardNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     private func registerXib(){

@@ -28,7 +28,7 @@
                     <navigationItem key="navigationItem" title="게시판" id="6ub-nL-Ebp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="boardSeletionTableview" destination="IXY-8X-hQc" id="4q9-ye-bVN"/>
+                        <outlet property="tableView" destination="IXY-8X-hQc" id="4q9-ye-bVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

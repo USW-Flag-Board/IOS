@@ -11,7 +11,7 @@
         <!--Free Board View Controller-->
         <scene sceneID="saF-cI-fBl">
             <objects>
-                <viewController storyboardIdentifier="FreeboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXq-41-kDk" customClass="FreeBoardViewController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="freeBoardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXq-41-kDk" customClass="FreeBoardViewController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JwR-dl-zjz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,9 +116,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Pdm-b0-2wR"/>
                     <connections>
+                        <outlet property="boardLocationLabel" destination="pk2-wv-SAZ" id="Lt7-h5-zbf"/>
+                        <outlet property="boardNameLabel" destination="dQH-FL-DR9" id="MTK-uu-YCh"/>
                         <outlet property="tableView" destination="cPr-sg-Eg3" id="yC0-od-axu"/>
-                        <outlet property="whatBoardLabel" destination="dQH-FL-DR9" id="MTK-uu-YCh"/>
-                        <outlet property="whereLabel" destination="pk2-wv-SAZ" id="Lt7-h5-zbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dd5-Mx-R8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

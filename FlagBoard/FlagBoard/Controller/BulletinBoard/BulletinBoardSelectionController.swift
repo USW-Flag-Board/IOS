@@ -4,7 +4,7 @@ class BulletinBoardSelectionController: UIViewController{
 
     
     //MARK: IBOutlets
-    @IBOutlet weak var boardSeletionTableview: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var boardNameList : [String] = ["!!공지!!", "정보게시판", "자유게시판", "동아리 이모저모", "Activity"]
 
@@ -13,7 +13,7 @@ class BulletinBoardSelectionController: UIViewController{
         //tableView에 cell 등록
         let nibName = UINib(nibName: "BulletinBoardSelectionTableViewCell", bundle: nil)
         
-        boardSeletionTableview.register(nibName, forCellReuseIdentifier: "boardSelectionTableCell")
+        tableView.register(nibName, forCellReuseIdentifier: "boardSelectionTableCell")
     }
         
     
@@ -23,8 +23,8 @@ class BulletinBoardSelectionController: UIViewController{
         
         registerXib()
         
-        boardSeletionTableview.delegate = self
-        boardSeletionTableview.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 
@@ -42,7 +42,7 @@ extension BulletinBoardSelectionController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = boardSeletionTableview.dequeueReusableCell(withIdentifier: "boardSelectionTableCell", for: indexPath) as! BulletinBoardSelectionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "boardSelectionTableCell", for: indexPath) as! BoardSelectionTableViewCell
         
         cell.boardLabel.text = boardNameList[indexPath.row]
         
@@ -53,7 +53,7 @@ extension BulletinBoardSelectionController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let boardViewStoryboard = UIStoryboard(name: "BoardView", bundle: nil)
-        guard let boardViewController = boardViewStoryboard.instantiateViewController(withIdentifier: "FreeboardVC") as? FreeBoardViewController else { return }
+        guard let boardViewController = boardViewStoryboard.instantiateViewController(withIdentifier: "freeBoardVC") as? FreeBoardViewController else { return }
         self.navigationController?.pushViewController(boardViewController, animated: true)
 //        let deselectRow: Void = tableView.deselectRow(at: indexPath, animated: false)
 //        print(deselectRow)
