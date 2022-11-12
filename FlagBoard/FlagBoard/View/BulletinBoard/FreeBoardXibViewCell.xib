@@ -58,7 +58,7 @@
                 <outlet property="commentNumLabel" destination="u2t-Sm-jCq" id="iEz-6S-hxO"/>
                 <outlet property="dateLabel" destination="9wh-8r-eX1" id="moh-Gr-DyN"/>
                 <outlet property="nameLabel" destination="2bB-8A-Aoi" id="zkT-Uq-8vW"/>
-                <outlet property="seen" destination="Zck-6j-Esl" id="BNP-2l-CT9"/>
+                <outlet property="seenNumLabel" destination="Zck-6j-Esl" id="rF0-sT-p4f"/>
                 <outlet property="titleLabel" destination="34W-1O-fVA" id="VJ4-A1-Oui"/>
             </connections>
             <point key="canvasLocation" x="269.56521739130437" y="111.49553571428571"/>
