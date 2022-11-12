@@ -12,6 +12,7 @@ class FreeBoardViewController: UIViewController {
     @IBOutlet weak var boardLocationLabel: UILabel!
     @IBOutlet weak var boardNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scrollButton: UIButton!
     
     var text : String = ""
     var dataGet : [DummyData] = DummyData.sampleData0
@@ -32,7 +33,6 @@ class FreeBoardViewController: UIViewController {
         self.setBoardLocation()
         setUpTableView()
         
-        //self.setPageController()
         self.setWhatDataGet()
         
     }
@@ -49,13 +49,6 @@ class FreeBoardViewController: UIViewController {
         tableView.separatorStyle = .none
     }
 
-//    func setPageController(){
-//        if ((DummyData.sampleData.count % 11) == 0){
-//            pageControl.numberOfPages = DummyData.sampleData.count / 11
-//        }else {
-//            pageControl.numberOfPages = DummyData.sampleData.count / 11 + 1
-//        }
-//    }
     
     func setWhatDataGet(){
         switch boardNameLabel.text{
@@ -76,6 +69,9 @@ class FreeBoardViewController: UIViewController {
         }
     }
     
+    @IBAction func moveToTop(_ sender: UIButton) {
+        tableView.setContentOffset(CGPoint.zero, animated: true)
+    }
 }
 
     
@@ -87,21 +83,6 @@ extension FreeBoardViewController: UITableViewDelegate, UITableViewDataSource
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch boardNameLabel.text{
-//        case "공지":
-//            return DummyData.sampleData0.count
-//        case "정보게시판":
-//            return DummyData.sampleData1.count
-//        case "자유게시판":
-//            return DummyData.sampleData2.count
-//        case "동아리 이모저모":
-//            return DummyData.sampleData3.count
-//        case "Activity":
-//            return DummyData.sampleData4.count
-//        default:
-//            return 0
-//
-//        }
         return dataGet.count
     }
     

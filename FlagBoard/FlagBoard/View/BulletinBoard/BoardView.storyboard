@@ -16,10 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-sg-Eg3">
-                                <rect key="frame" x="0.0" y="207" width="414" height="543"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-sg-Eg3">
+                                <rect key="frame" x="0.0" y="207" width="414" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="orq-gN-Mbl"/>
+                                </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board &gt; 자유게시판" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk2-wv-SAZ">
                                 <rect key="frame" x="20" y="64" width="130.5" height="21"/>
@@ -98,18 +100,31 @@
                                     <constraint firstAttribute="bottom" secondItem="cPO-dL-WYi" secondAttribute="bottom" constant="8" id="wQg-3D-BlC"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xya-xZ-o4m">
+                                <rect key="frame" x="355" y="693" width="39" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="⏏︎" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="moveToTop:" destination="HXq-41-kDk" eventType="touchUpInside" id="IHh-Kf-qAD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xB3-jU-ELb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dQH-FL-DR9" firstAttribute="leading" secondItem="xB3-jU-ELb" secondAttribute="leading" constant="20" id="2ea-QE-t4L"/>
+                            <constraint firstItem="cPr-sg-Eg3" firstAttribute="leading" secondItem="xB3-jU-ELb" secondAttribute="leading" id="5AV-ab-27T"/>
                             <constraint firstItem="pk2-wv-SAZ" firstAttribute="leading" secondItem="xB3-jU-ELb" secondAttribute="leading" constant="20" id="A4i-A5-3wB"/>
                             <constraint firstItem="pk2-wv-SAZ" firstAttribute="top" secondItem="xB3-jU-ELb" secondAttribute="top" constant="20" id="CFu-lp-RSJ"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="trailing" secondItem="xB3-jU-ELb" secondAttribute="trailing" id="Ehp-lo-e12"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="top" secondItem="dQH-FL-DR9" secondAttribute="bottom" constant="6" id="UBc-MV-ePb"/>
                             <constraint firstItem="dQH-FL-DR9" firstAttribute="top" secondItem="pk2-wv-SAZ" secondAttribute="bottom" constant="5" id="UfF-Ws-P5D"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="top" secondItem="dQH-FL-DR9" secondAttribute="bottom" constant="6" id="bdT-tm-hEZ"/>
+                            <constraint firstItem="cPr-sg-Eg3" firstAttribute="trailing" secondItem="xB3-jU-ELb" secondAttribute="trailing" id="gVK-8Q-nQC"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="leading" secondItem="xB3-jU-ELb" secondAttribute="leading" id="iBg-Xb-83Q"/>
+                            <constraint firstItem="cPr-sg-Eg3" firstAttribute="top" secondItem="idf-0V-ikr" secondAttribute="bottom" constant="1" id="lYE-IJ-4uC"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="trailing" secondItem="xB3-jU-ELb" secondAttribute="trailing" id="pOj-ZJ-mC4"/>
                             <constraint firstItem="idf-0V-ikr" firstAttribute="leading" secondItem="xB3-jU-ELb" secondAttribute="leading" id="ylT-W8-4gq"/>
                         </constraints>
@@ -118,6 +133,7 @@
                     <connections>
                         <outlet property="boardLocationLabel" destination="pk2-wv-SAZ" id="Lt7-h5-zbf"/>
                         <outlet property="boardNameLabel" destination="dQH-FL-DR9" id="MTK-uu-YCh"/>
+                        <outlet property="scrollButton" destination="xya-xZ-o4m" id="WtD-nw-zWI"/>
                         <outlet property="tableView" destination="cPr-sg-Eg3" id="yC0-od-axu"/>
                     </connections>
                 </viewController>
