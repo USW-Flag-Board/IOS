@@ -6,7 +6,9 @@ class BulletinBoardSelectionController: UIViewController{
     //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
-    var boardNameList : [String] = ["!!공지!!", "정보게시판", "자유게시판", "동아리 이모저모", "Activity"]
+    
+    
+    var boardNameList : [String] = ["공지", "정보게시판", "자유게시판", "동아리 이모저모", "Activity"]
 
     private func registerXib(){
         
@@ -33,6 +35,7 @@ class BulletinBoardSelectionController: UIViewController{
 
 
  // MARK: - UITableViewDataSource
+
 extension BulletinBoardSelectionController: UITableViewDelegate, UITableViewDataSource
 {
     
@@ -54,7 +57,31 @@ extension BulletinBoardSelectionController: UITableViewDelegate, UITableViewData
         
         let boardViewStoryboard = UIStoryboard(name: "BoardView", bundle: nil)
         guard let boardViewController = boardViewStoryboard.instantiateViewController(withIdentifier: "freeBoardVC") as? FreeBoardViewController else { return }
+        
+        switch Int(indexPath.row){
+        case 0:
+            boardViewController.text = "공지"
+            
+        case 1:
+            boardViewController.text = "정보게시판"
+            
+        case 2:
+            boardViewController.text = "자유게시판"
+            
+        case 3:
+            boardViewController.text = "동아리 이모저모"
+            
+        case 4:
+            boardViewController.text = "Activity"
+            
+        default:
+            break
+        
+        }
+        
+        
         self.navigationController?.pushViewController(boardViewController, animated: true)
+        
 //        let deselectRow: Void = tableView.deselectRow(at: indexPath, animated: false)
 //        print(deselectRow)
 //        print("indexPath.row - \(indexPath.row)")
