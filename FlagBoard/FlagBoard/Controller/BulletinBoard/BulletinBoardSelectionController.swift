@@ -29,7 +29,17 @@ class BulletinBoardSelectionController: UIViewController{
         tableView.dataSource = self
     }
     
-
+    //MARK: Button Actions
+    @IBAction func didTabMenuButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SideMenuView", bundle: nil)
+        let sideMenuViewController: SideMenuController =
+            storyboard.instantiateViewController(withIdentifier: "SideMenuController") as!
+                                                                                SideMenuController
+        let menu = CustomSideMenuNavigationController(rootViewController: sideMenuViewController)
+        
+        present(menu, animated: true, completion: nil)
+    }
+    
 
 }
 
