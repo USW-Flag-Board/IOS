@@ -1,8 +1,30 @@
-//
-//  ProfileController.swift
-//  FlagBoard
-//
-//  Created by 신승재 on 2022/10/07.
-//
+import UIKit
+import SideMenu
 
-import Foundation
+class ProfileController: UIViewController {
+
+    //MARK: IBOutlets
+    
+    //MARK: Properties
+    
+    //MARK: Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    //MARK: Button Actions
+    @IBAction func didTabMenuButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SideMenuView", bundle: nil)
+        let sideMenuViewController: SideMenuController =
+            storyboard.instantiateViewController(withIdentifier: "SideMenuController") as!
+                                                                                SideMenuController
+        let menu = CustomSideMenuNavigationController(rootViewController: sideMenuViewController)
+        
+        present(menu, animated: true, completion: nil)
+    }
+    
+    //MARK: Design Functions
+}

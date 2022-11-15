@@ -11,7 +11,7 @@
         <!--프로필-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="ProfileController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="프로필" id="uIe-rd-iOa"/>
+                    <navigationItem key="navigationItem" title="프로필" id="uIe-rd-iOa">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="tPS-71-Yg0">
+                            <connections>
+                                <action selector="didTabMenuButton:" destination="Y6W-OH-hqX" id="Kkr-Zm-md3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -37,7 +43,6 @@
         <!--프로필-->
         <scene sceneID="fjT-XR-XI6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZC8-gI-FC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ProfilePage" id="kda-tv-7Kg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="sgW-Ab-a4o"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -49,11 +54,13 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="8OZ-0M-8JI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZC8-gI-FC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-730" y="71"/>
         </scene>
     </scenes>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
