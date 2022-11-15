@@ -25,7 +25,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="게시판" id="6ub-nL-Ebp"/>
+                    <navigationItem key="navigationItem" title="게시판" id="6ub-nL-Ebp">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="sjG-v6-eWm">
+                            <connections>
+                                <action selector="didTabMenuButton:" destination="Y6W-OH-hqX" id="cRQ-SR-1WK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="IXY-8X-hQc" id="4q9-ye-bVN"/>
@@ -55,6 +61,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
