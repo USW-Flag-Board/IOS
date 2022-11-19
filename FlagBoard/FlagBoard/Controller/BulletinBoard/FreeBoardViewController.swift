@@ -105,7 +105,7 @@ extension FreeBoardViewController: UITableViewDelegate, UITableViewDataSource
         bulletinBoardDetailViewController.boardName = text
         bulletinBoardDetailViewController.postTitle = dataGet[indexPath.row].title
         bulletinBoardDetailViewController.author = dataGet[indexPath.row].writer
-        bulletinBoardDetailViewController.contents = "내용이 들어갈 자리입니다."
+        bulletinBoardDetailViewController.contents = dataGet[indexPath.row].contents
         bulletinBoardDetailViewController.createdAt = dataGet[indexPath.row].date
         
         self.navigationController?.pushViewController(bulletinBoardDetailViewController, animated: true)
