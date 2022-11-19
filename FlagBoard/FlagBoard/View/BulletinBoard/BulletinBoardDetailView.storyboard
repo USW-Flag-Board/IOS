@@ -46,8 +46,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="12C-tn-5bi">
-                                        <rect key="frame" x="0.0" y="322" width="414" height="128"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="12C-tn-5bi">
+                                        <rect key="frame" x="0.0" y="225" width="414" height="617"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h12-Op-QLS">
@@ -63,11 +63,12 @@
                                     <constraint firstItem="aOC-oz-ha6" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="6ru-C2-21d"/>
                                     <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="12C-tn-5bi" secondAttribute="trailing" id="7gJ-wz-mCe"/>
                                     <constraint firstItem="h12-Op-QLS" firstAttribute="top" secondItem="ac2-qz-36w" secondAttribute="bottom" constant="50" id="B1F-fK-49f"/>
+                                    <constraint firstItem="12C-tn-5bi" firstAttribute="top" secondItem="h12-Op-QLS" secondAttribute="bottom" constant="20" id="G6x-l8-Tu8"/>
                                     <constraint firstItem="12C-tn-5bi" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" id="Gpw-Ab-SGs"/>
                                     <constraint firstItem="ac2-qz-36w" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="Jv6-Zk-O3K"/>
-                                    <constraint firstItem="12C-tn-5bi" firstAttribute="top" secondItem="h12-Op-QLS" secondAttribute="bottom" constant="20" id="S1F-7w-d3M"/>
                                     <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="h12-Op-QLS" secondAttribute="trailing" constant="20" id="ZVX-Gf-uvc"/>
                                     <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="OXd-2A-QfO" secondAttribute="trailing" constant="20" id="aVr-Zo-rGW"/>
+                                    <constraint firstItem="3a0-QU-AcW" firstAttribute="bottom" secondItem="12C-tn-5bi" secondAttribute="bottom" constant="10" id="bEH-1e-5IY"/>
                                     <constraint firstItem="OXd-2A-QfO" firstAttribute="top" secondItem="3a0-QU-AcW" secondAttribute="top" constant="99" id="bt9-4a-1Bq"/>
                                     <constraint firstItem="s0K-W5-9nr" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="f0K-i0-jLr"/>
                                     <constraint firstItem="aOC-oz-ha6" firstAttribute="top" secondItem="s0K-W5-9nr" secondAttribute="bottom" constant="20" id="fK1-mI-g39"/>
