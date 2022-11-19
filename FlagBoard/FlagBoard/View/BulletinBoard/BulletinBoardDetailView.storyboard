@@ -29,26 +29,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-qz-36w">
-                                        <rect key="frame" x="20" y="138" width="45" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h12-Op-QLS">
-                                        <rect key="frame" x="20" y="179" width="30" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="20" y="121" width="34" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-oz-ha6">
-                                        <rect key="frame" x="20" y="97" width="30" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="20" y="97" width="35" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXd-2A-QfO">
-                                        <rect key="frame" x="20" y="220" width="45" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="360" y="99" width="34" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -56,20 +50,27 @@
                                         <rect key="frame" x="0.0" y="322" width="414" height="128"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h12-Op-QLS">
+                                        <rect key="frame" x="20" y="187" width="374" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="aOC-oz-ha6" firstAttribute="top" secondItem="s0K-W5-9nr" secondAttribute="bottom" constant="20" id="12z-JU-vVy"/>
-                                    <constraint firstItem="OXd-2A-QfO" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="2AN-nZ-CeS"/>
+                                    <constraint firstItem="h12-Op-QLS" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="0NU-01-QTw"/>
+                                    <constraint firstItem="ac2-qz-36w" firstAttribute="top" secondItem="aOC-oz-ha6" secondAttribute="bottom" id="0Sn-kN-oCj"/>
+                                    <constraint firstItem="aOC-oz-ha6" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="6ru-C2-21d"/>
                                     <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="12C-tn-5bi" secondAttribute="trailing" id="7gJ-wz-mCe"/>
-                                    <constraint firstItem="h12-Op-QLS" firstAttribute="top" secondItem="ac2-qz-36w" secondAttribute="bottom" constant="20" id="8SD-3o-bta"/>
+                                    <constraint firstItem="h12-Op-QLS" firstAttribute="top" secondItem="ac2-qz-36w" secondAttribute="bottom" constant="50" id="B1F-fK-49f"/>
                                     <constraint firstItem="12C-tn-5bi" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" id="Gpw-Ab-SGs"/>
-                                    <constraint firstItem="aOC-oz-ha6" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="Hse-Pe-COZ"/>
-                                    <constraint firstItem="h12-Op-QLS" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="OiZ-c8-zwr"/>
-                                    <constraint firstItem="ac2-qz-36w" firstAttribute="top" secondItem="aOC-oz-ha6" secondAttribute="bottom" constant="20" id="asI-28-KNA"/>
-                                    <constraint firstItem="12C-tn-5bi" firstAttribute="top" secondItem="OXd-2A-QfO" secondAttribute="bottom" constant="81" id="av2-Yl-CeR"/>
-                                    <constraint firstItem="OXd-2A-QfO" firstAttribute="top" secondItem="h12-Op-QLS" secondAttribute="bottom" constant="20" id="bGl-9l-7jK"/>
+                                    <constraint firstItem="ac2-qz-36w" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="Jv6-Zk-O3K"/>
+                                    <constraint firstItem="12C-tn-5bi" firstAttribute="top" secondItem="h12-Op-QLS" secondAttribute="bottom" constant="20" id="S1F-7w-d3M"/>
+                                    <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="h12-Op-QLS" secondAttribute="trailing" constant="20" id="ZVX-Gf-uvc"/>
+                                    <constraint firstItem="3a0-QU-AcW" firstAttribute="trailing" secondItem="OXd-2A-QfO" secondAttribute="trailing" constant="20" id="aVr-Zo-rGW"/>
+                                    <constraint firstItem="OXd-2A-QfO" firstAttribute="top" secondItem="3a0-QU-AcW" secondAttribute="top" constant="99" id="bt9-4a-1Bq"/>
                                     <constraint firstItem="s0K-W5-9nr" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="f0K-i0-jLr"/>
-                                    <constraint firstItem="ac2-qz-36w" firstAttribute="leading" secondItem="3a0-QU-AcW" secondAttribute="leading" constant="20" id="hH7-ot-Pq9"/>
+                                    <constraint firstItem="aOC-oz-ha6" firstAttribute="top" secondItem="s0K-W5-9nr" secondAttribute="bottom" constant="20" id="fK1-mI-g39"/>
                                     <constraint firstItem="s0K-W5-9nr" firstAttribute="top" secondItem="3a0-QU-AcW" secondAttribute="top" constant="20" id="ie7-dI-hcv"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Tjx-By-6uQ"/>
