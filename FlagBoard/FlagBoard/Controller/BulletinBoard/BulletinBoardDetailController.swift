@@ -17,10 +17,27 @@ class BulletinBoardDetailController: UIViewController {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: Properties
+    var boardName: String?
+    var postTitle: String?
+    var author: String?
+    var contents: String?
+    var createdAt: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let boardName = boardName else { return }
+        self.boardNameLabel.text = boardName
+        guard let postTitle = postTitle else { return }
+        self.titleLabel.text = postTitle
+        guard let author = author else { return }
+        self.authorLabel.text = author
+        guard let contents = contents else { return }
+        self.contentsLabel.text = contents
+        guard let createdAt = createdAt else { return }
+        self.createdAtLabel.text = createdAt
+
     }
     
 
