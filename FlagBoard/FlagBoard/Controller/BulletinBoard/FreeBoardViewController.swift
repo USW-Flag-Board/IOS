@@ -99,6 +99,10 @@ extension FreeBoardViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bulletinBoardDetailStoryboard = UIStoryboard(name: "BulletinBoardDetailView", bundle: nil)
+        guard let bulletinBoardDetailViewController = bulletinBoardDetailStoryboard.instantiateViewController(withIdentifier: "BulletinBoardDetailVC") as? BulletinBoardDetailController else { return }
         
+        
+        self.navigationController?.pushViewController(bulletinBoardDetailViewController, animated: true)
     }
 }
