@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BulletinBoardDetailController: UIViewController {
+class BulletinBoardDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //MARK: IBOutlets
     @IBOutlet weak var boardNameLabel: UILabel!
@@ -24,6 +24,8 @@ class BulletinBoardDetailController: UIViewController {
     var contents: String?
     var createdAt: String?
     
+    var dummyDataArray: [CommentData] = CommentData.sampleData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,8 +40,31 @@ class BulletinBoardDetailController: UIViewController {
         guard let createdAt = createdAt else { return }
         self.createdAtLabel.text = createdAt
 
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        registerXib()
     }
     
-
+    //MARK: Functions
+    private func registerXib(){
+        let nibName = UINib(nibName: "BulletinBoardCommentCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "commentCell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyDataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! BulletinBoardCommentCell
+        
+        cell.authorLabel.text = dummyDataArray[indexPath.row].author
+        cell.contentsLabel.text = dummyDataArray[indexPath.row].contents
+        cell.createAtLabel.text = dummyDataArray[indexPath.row].createAt
+        
+        return cell
+    }
  
+    
 }

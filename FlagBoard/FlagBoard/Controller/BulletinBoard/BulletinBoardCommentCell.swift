@@ -9,6 +9,11 @@ import UIKit
 
 class BulletinBoardCommentCell: UITableViewCell {
 
+    //MARK: IBOutlets
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var createAtLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

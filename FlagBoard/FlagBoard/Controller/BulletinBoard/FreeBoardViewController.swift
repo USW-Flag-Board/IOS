@@ -22,7 +22,7 @@ class FreeBoardViewController: UIViewController {
         
         //tableView에 cell 등록
         let nibName = UINib(nibName: "FreeBoardXibViewCell", bundle: nil)
-        
+    
         tableView.register(nibName, forCellReuseIdentifier: "freeBoardCell")
     }
     
