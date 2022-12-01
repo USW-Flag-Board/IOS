@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BulletinBoardDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BulletinBoardDetailController: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var boardNameLabel: UILabel!
@@ -28,6 +28,8 @@ class BulletinBoardDetailController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpTableView()
 
         guard let boardName = boardName else { return }
         self.boardNameLabel.text = boardName
@@ -40,18 +42,27 @@ class BulletinBoardDetailController: UIViewController, UITableViewDataSource, UI
         guard let createdAt = createdAt else { return }
         self.createdAtLabel.text = createdAt
 
-        tableView.dataSource = self
-        tableView.delegate = self
         
-        registerXib()
     }
     
     //MARK: Functions
+    func setUpTableView(){
+        registerXib()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     private func registerXib(){
         let nibName = UINib(nibName: "BulletinBoardCommentCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
     }
-    
+}
+
+// MARK: - UITableViewDataSource
+
+extension BulletinBoardDetailController: UITableViewDelegate, UITableViewDataSource
+{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummyDataArray.count
     }
@@ -65,6 +76,4 @@ class BulletinBoardDetailController: UIViewController, UITableViewDataSource, UI
         
         return cell
     }
- 
-    
 }
