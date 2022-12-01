@@ -30,19 +30,8 @@ class BulletinBoardDetailController: UIViewController {
         super.viewDidLoad()
         
         setUpTableView()
+        setAllLabels()
 
-        guard let boardName = boardName else { return }
-        self.boardNameLabel.text = boardName
-        guard let postTitle = postTitle else { return }
-        self.titleLabel.text = postTitle
-        guard let author = author else { return }
-        self.authorLabel.text = author
-        guard let contents = contents else { return }
-        self.contentsLabel.text = contents
-        guard let createdAt = createdAt else { return }
-        self.createdAtLabel.text = createdAt
-
-        
     }
     
     //MARK: Functions
@@ -53,6 +42,20 @@ class BulletinBoardDetailController: UIViewController {
         tableView.dataSource = self
     }
     
+    // 메서드 네이밍은 임시, 추후에 수정 예정
+    func setAllLabels() {
+        guard let boardName = boardName else { return }
+        self.boardNameLabel.text = boardName
+        guard let postTitle = postTitle else { return }
+        self.titleLabel.text = postTitle
+        guard let author = author else { return }
+        self.authorLabel.text = author
+        guard let contents = contents else { return }
+        self.contentsLabel.text = contents
+        guard let createdAt = createdAt else { return }
+        self.createdAtLabel.text = createdAt
+    }
+    
     private func registerXib(){
         let nibName = UINib(nibName: "BulletinBoardCommentCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
@@ -60,7 +63,6 @@ class BulletinBoardDetailController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-
 extension BulletinBoardDetailController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
