@@ -66,6 +66,9 @@
                                 <rect key="frame" x="301" y="415.5" width="73" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                <connections>
+                                    <action selector="didTabRegisterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="05P-UL-piH"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-ns-3oY">
                                 <rect key="frame" x="87" y="91" width="240" height="84"/>

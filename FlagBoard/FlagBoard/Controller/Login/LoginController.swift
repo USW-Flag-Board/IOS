@@ -20,5 +20,11 @@ class LoginController: UIViewController {
     }
     
     //MARK: Functions
-
+    @IBAction func didTabRegisterButton(_ sender: Any) {
+        let registerStoryboard = UIStoryboard(name: "RegisterView", bundle: nil)
+        guard let registerViewController = registerStoryboard.instantiateViewController(withIdentifier: "RegisterVC") as? RegisterController else { return }
+        
+        self.navigationController?.pushViewController(registerViewController, animated: true)
+    }
+    
 }
