@@ -112,6 +112,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYH-Xb-7sh"/>
+                    <connections>
+                        <outlet property="idTextField" destination="v4F-fq-RR7" id="5ml-tG-0qk"/>
+                        <outlet property="passwordTextField" destination="jbn-zu-C73" id="YLK-jA-D8X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
