@@ -31,17 +31,92 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v4F-fq-RR7">
+                                <rect key="frame" x="40" y="206.5" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-zu-C73">
+                                <rect key="frame" x="40" y="250.5" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YQ-eV-cDE">
+                                <rect key="frame" x="40" y="310" width="117" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그인 상태 유지"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcJ-k4-OG8">
+                                <rect key="frame" x="261" y="309.5" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="아이디 기억하기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0e-tF-N0m">
+                                <rect key="frame" x="40" y="415.5" width="89" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="아이디 찾기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyf-DS-3WJ">
+                                <rect key="frame" x="157" y="416" width="101" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="비밀번호 찾기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeP-F7-lO9">
+                                <rect key="frame" x="301" y="415.5" width="73" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-ns-3oY">
+                                <rect key="frame" x="87" y="91" width="240" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86.5" id="c3c-KG-3k7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg9-gb-k79">
+                                <rect key="frame" x="40" y="364.5" width="334" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="로그인"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZcJ-k4-OG8" firstAttribute="leading" secondItem="8YQ-eV-cDE" secondAttribute="trailing" constant="10" id="0sD-ux-OvK"/>
+                            <constraint firstItem="jbn-zu-C73" firstAttribute="top" secondItem="v4F-fq-RR7" secondAttribute="bottom" constant="10" id="5en-fX-NH4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZcJ-k4-OG8" secondAttribute="trailing" constant="40" id="8Xz-Gq-j1l"/>
+                            <constraint firstItem="i3n-ns-3oY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="87" id="9OS-Zc-LKK"/>
+                            <constraint firstItem="Dyf-DS-3WJ" firstAttribute="top" secondItem="Dg9-gb-k79" secondAttribute="bottom" constant="20" id="CCY-xr-nZb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v4F-fq-RR7" secondAttribute="trailing" constant="40" id="Kym-af-aUF"/>
+                            <constraint firstItem="8YQ-eV-cDE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Rht-Rl-zDc"/>
+                            <constraint firstItem="p0e-tF-N0m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="VC3-dg-h7R"/>
+                            <constraint firstItem="i3n-ns-3oY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="90" id="WU0-dp-5Ct"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dg9-gb-k79" secondAttribute="trailing" constant="40" id="Xpv-KK-WQZ"/>
+                            <constraint firstItem="eeP-F7-lO9" firstAttribute="leading" secondItem="Dyf-DS-3WJ" secondAttribute="trailing" constant="20" id="ZUc-mL-RzQ"/>
+                            <constraint firstItem="ZcJ-k4-OG8" firstAttribute="top" secondItem="jbn-zu-C73" secondAttribute="bottom" constant="25" id="Zx2-45-lPq"/>
+                            <constraint firstItem="v4F-fq-RR7" firstAttribute="top" secondItem="i3n-ns-3oY" secondAttribute="bottom" constant="30" id="Zya-4m-lS2"/>
+                            <constraint firstItem="8YQ-eV-cDE" firstAttribute="top" secondItem="jbn-zu-C73" secondAttribute="bottom" constant="25" id="c5f-BZ-v7j"/>
+                            <constraint firstItem="Dg9-gb-k79" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="cCX-Ha-Tnp"/>
+                            <constraint firstItem="Dg9-gb-k79" firstAttribute="top" secondItem="jbn-zu-C73" secondAttribute="bottom" constant="80" id="cVo-as-0rX"/>
+                            <constraint firstItem="Dyf-DS-3WJ" firstAttribute="leading" secondItem="p0e-tF-N0m" secondAttribute="trailing" constant="20" id="ce3-8R-rMi"/>
+                            <constraint firstItem="jbn-zu-C73" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="fz9-zA-l8g"/>
+                            <constraint firstItem="p0e-tF-N0m" firstAttribute="top" secondItem="Dg9-gb-k79" secondAttribute="bottom" constant="20" id="hjW-2Z-7QR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jbn-zu-C73" secondAttribute="trailing" constant="40" id="iB6-TF-9Hz"/>
+                            <constraint firstItem="eeP-F7-lO9" firstAttribute="top" secondItem="Dg9-gb-k79" secondAttribute="bottom" constant="20" id="oiD-fz-iiG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i3n-ns-3oY" secondAttribute="trailing" constant="87" id="qR4-bl-OP9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eeP-F7-lO9" secondAttribute="trailing" constant="40" id="tck-gV-ZL5"/>
+                            <constraint firstItem="v4F-fq-RR7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="vFP-Xw-6kT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYH-Xb-7sh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="134"/>
+            <point key="canvasLocation" x="53.623188405797109" y="133.92857142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
