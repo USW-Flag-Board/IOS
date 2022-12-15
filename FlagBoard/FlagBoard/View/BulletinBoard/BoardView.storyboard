@@ -11,7 +11,7 @@
         <!--Free Board View Controller-->
         <scene sceneID="saF-cI-fBl">
             <objects>
-                <viewController storyboardIdentifier="freeBoardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXq-41-kDk" customClass="FreeBoardViewController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="freeBoardVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HXq-41-kDk" customClass="FreeBoardViewController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JwR-dl-zjz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

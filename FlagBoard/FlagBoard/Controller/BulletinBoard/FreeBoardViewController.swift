@@ -22,7 +22,7 @@ class FreeBoardViewController: UIViewController {
         
         //tableView에 cell 등록
         let nibName = UINib(nibName: "FreeBoardXibViewCell", bundle: nil)
-        
+    
         tableView.register(nibName, forCellReuseIdentifier: "freeBoardCell")
     }
     
@@ -99,6 +99,15 @@ extension FreeBoardViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bulletinBoardDetailStoryboard = UIStoryboard(name: "BulletinBoardDetailView", bundle: nil)
+        guard let bulletinBoardDetailViewController = bulletinBoardDetailStoryboard.instantiateViewController(withIdentifier: "BulletinBoardDetailVC") as? BulletinBoardDetailController else { return }
         
+        bulletinBoardDetailViewController.boardName = text
+        bulletinBoardDetailViewController.postTitle = dataGet[indexPath.row].title
+        bulletinBoardDetailViewController.author = dataGet[indexPath.row].writer
+        bulletinBoardDetailViewController.contents = dataGet[indexPath.row].contents
+        bulletinBoardDetailViewController.createdAt = dataGet[indexPath.row].date
+        
+        self.navigationController?.pushViewController(bulletinBoardDetailViewController, animated: true)
     }
 }
