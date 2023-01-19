@@ -10,18 +10,18 @@ import UIKit
 class RegisterEmailAndInformationController: UIViewController {
     
     @IBOutlet weak var majorTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
     
     var id: String?
     var password: String?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let picker = UIPickerView()
-        picker.delegate = self
-        self.majorTextField.inputView = picker
+        let majorPicker = UIPickerView()
+        majorPicker.delegate = self
+        self.majorTextField.inputView = majorPicker
         
     }
     
@@ -35,7 +35,7 @@ class RegisterEmailAndInformationController: UIViewController {
     
     // 이메일 형식 검사
     func isValidEmail(email: String?) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailRegEx = "[A-Z0-9a-z._%+-]{2,64}"
         
         let userEmail = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
                   return userEmail.evaluate(with: email)
