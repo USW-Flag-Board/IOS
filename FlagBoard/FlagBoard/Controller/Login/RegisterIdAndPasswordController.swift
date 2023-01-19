@@ -9,6 +9,11 @@ import UIKit
 
 class RegisterIdAndPasswordController: UIViewController {
 
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var reconfirmPassword: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,11 +23,20 @@ class RegisterIdAndPasswordController: UIViewController {
 
     // MARK: Functions
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        guard let id = idTextField.text, !id.isEmpty else { return }
+        guard let password = passwordTextField.text, !password.isEmpty else { return }
+        
         let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
         guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
+        
+        registerEmailAndInformationViewController.id = id
+        registerEmailAndInformationViewController.password = password
 
         self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
     }
+    
+    
     
     // id 형식 검사(형식은 미정)
     func isValidId(id: String?) -> Bool {
@@ -41,29 +55,4 @@ class RegisterIdAndPasswordController: UIViewController {
                 }
         return true
     }
-    
-    // 이메일 형식 검사
-    func isValidEmail(email: String?) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let userEmail = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-                  return userEmail.evaluate(with: email)
-    }
-    
-    // 이름 형식 검사
-    func isValidName(name: String?) -> Bool {
-        let nameRegEx = "[가-힣]{3, 4}"
-        
-        let userName = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
-                  return userName.evaluate(with: name)
-    }
-    
-    // 학번 형식 검사
-    func isValidStudentId(studentId: String?) -> Bool {
-        let studentIdRegEx = "0-9{8}"
-        
-        let userStudentId = NSPredicate(format:"SELF MATCHES %@", studentIdRegEx)
-                  return userStudentId.evaluate(with: studentId)
-    }
-
 }
