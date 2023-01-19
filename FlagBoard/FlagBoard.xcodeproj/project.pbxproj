@@ -37,6 +37,8 @@
 		2CE968FD28EFBBD000E2D068 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968FC28EFBBD000E2D068 /* ProfileModel.swift */; };
 		2CFDE774297912A8009695BA /* RegisterEmailAndInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDE773297912A8009695BA /* RegisterEmailAndInformationController.swift */; };
 		2CFDE777297912E7009695BA /* RegisterEmailAndInformationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFDE776297912E7009695BA /* RegisterEmailAndInformationView.storyboard */; };
+		2CFDE779297917B2009695BA /* EmailVerifyView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFDE778297917B2009695BA /* EmailVerifyView.storyboard */; };
+		2CFDE77B297917C8009695BA /* EmailVerifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDE77A297917C8009695BA /* EmailVerifyController.swift */; };
 		53733250290C8B3100D6DE25 /* FreeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373324F290C8B3100D6DE25 /* FreeBoardViewController.swift */; };
 		53733253290C908C00D6DE25 /* FreeBoardXibViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53733251290C908C00D6DE25 /* FreeBoardXibViewCell.swift */; };
 		53733254290C908C00D6DE25 /* FreeBoardXibViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53733252290C908C00D6DE25 /* FreeBoardXibViewCell.xib */; };
@@ -81,6 +83,8 @@
 		2CE9690228EFBE1800E2D068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainView.storyboard; sourceTree = "<group>"; };
 		2CFDE773297912A8009695BA /* RegisterEmailAndInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailAndInformationController.swift; sourceTree = "<group>"; };
 		2CFDE776297912E7009695BA /* RegisterEmailAndInformationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterEmailAndInformationView.storyboard; sourceTree = "<group>"; };
+		2CFDE778297917B2009695BA /* EmailVerifyView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailVerifyView.storyboard; sourceTree = "<group>"; };
+		2CFDE77A297917C8009695BA /* EmailVerifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyController.swift; sourceTree = "<group>"; };
 		403779DE585FDF34D23A003D /* Pods-FlagBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.release.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.release.xcconfig"; sourceTree = "<group>"; };
 		45BADE8B62D0B361CB0AA07E /* Pods-FlagBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.debug.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		5373324F290C8B3100D6DE25 /* FreeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeBoardViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				2C422C39293AE2820015CE9D /* LoginController.swift */,
 				2C422C3F2949D9850015CE9D /* RegisterIdAndPasswordController.swift */,
 				2CFDE773297912A8009695BA /* RegisterEmailAndInformationController.swift */,
+				2CFDE77A297917C8009695BA /* EmailVerifyController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				2C422C3B293AE2FC0015CE9D /* LoginView.storyboard */,
 				2C422C412949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard */,
 				2CFDE776297912E7009695BA /* RegisterEmailAndInformationView.storyboard */,
+				2CFDE778297917B2009695BA /* EmailVerifyView.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CFDE779297917B2009695BA /* EmailVerifyView.storyboard in Resources */,
 				53FD972328F5D8D1002F9190 /* BoardView.storyboard in Resources */,
 				53733254290C908C00D6DE25 /* FreeBoardXibViewCell.xib in Resources */,
 				2C422C422949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard in Resources */,
@@ -478,6 +485,7 @@
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
 				53FD972928F5FA63002F9190 /* BoardNavigationController.swift in Sources */,
 				2C422C3A293AE2820015CE9D /* LoginController.swift in Sources */,
+				2CFDE77B297917C8009695BA /* EmailVerifyController.swift in Sources */,
 				53733253290C908C00D6DE25 /* FreeBoardXibViewCell.swift in Sources */,
 				53733256291159C700D6DE25 /* FreeBoardModel.swift in Sources */,
 				2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */,
