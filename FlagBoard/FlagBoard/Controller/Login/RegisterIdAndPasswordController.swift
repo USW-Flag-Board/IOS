@@ -17,6 +17,12 @@ class RegisterIdAndPasswordController: UIViewController {
     
 
     // MARK: Functions
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
+        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
+
+        self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
+    }
     
     // id 형식 검사(형식은 미정)
     func isValidId(id: String?) -> Bool {

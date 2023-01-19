@@ -22,11 +22,11 @@ class LoginController: UIViewController {
     }
     
     //MARK: Functions
-    @IBAction func didTabRegisterButton(_ sender: Any) {
-        let registerStoryboard = UIStoryboard(name: "RegisterView", bundle: nil)
-        guard let registerViewController = registerStoryboard.instantiateViewController(withIdentifier: "RegisterVC") as? RegisterController else { return }
-        
-        self.navigationController?.pushViewController(registerViewController, animated: true)
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        let registerIdAndPasswordStoryboard = UIStoryboard(name: "RegisterIdAndPasswordView", bundle: nil)
+        guard let RegisterIdAndPasswordViewController = registerIdAndPasswordStoryboard.instantiateViewController(withIdentifier: "RegisterIdAndPasswordVC") as? RegisterIdAndPasswordController else { return }
+
+        self.navigationController?.pushViewController(RegisterIdAndPasswordViewController, animated: true)
     }
     
     
