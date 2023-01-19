@@ -15,7 +15,14 @@ class RegisterEmailAndInformationController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: Functions
+    @IBAction func sendEmailButtonPressed(_ sender: UIButton) {
+        let emailVerifyStoryboard = UIStoryboard(name: "EmailVerifyView", bundle: nil)
+        guard let emailVerifyViewController = emailVerifyStoryboard.instantiateViewController(withIdentifier: "EmailVerifyVC") as? EmailVerifyController else { return }
 
+        self.navigationController?.pushViewController(emailVerifyViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
