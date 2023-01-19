@@ -17,7 +17,7 @@
 		2C422C3E293AE3130015CE9D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C3D293AE3130015CE9D /* LoginModel.swift */; };
 		2C422C402949D9850015CE9D /* RegisterIdAndPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C3F2949D9850015CE9D /* RegisterIdAndPasswordController.swift */; };
 		2C422C422949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C422C412949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard */; };
-		2C422C442949DA060015CE9D /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C432949DA060015CE9D /* RegisterModel.swift */; };
+		2C422C442949DA060015CE9D /* RegisterEmailAndInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C432949DA060015CE9D /* RegisterEmailAndInformationModel.swift */; };
 		2CDEAA7528EFC2AA00464E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968FF28EFBE1800E2D068 /* LaunchScreen.storyboard */; };
 		2CDEAA7628EFC2AE00464E30 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9690128EFBE1800E2D068 /* MainView.storyboard */; };
 		2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */; };
@@ -61,7 +61,7 @@
 		2C422C3D293AE3130015CE9D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		2C422C3F2949D9850015CE9D /* RegisterIdAndPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIdAndPasswordController.swift; sourceTree = "<group>"; };
 		2C422C412949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIdAndPasswordView.storyboard; sourceTree = "<group>"; };
-		2C422C432949DA060015CE9D /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		2C422C432949DA060015CE9D /* RegisterEmailAndInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailAndInformationModel.swift; sourceTree = "<group>"; };
 		2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2CDEAA7C28F59CB800464E30 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuController.swift; path = FlagBoard/Controller/SideMenu/SideMenuController.swift; sourceTree = SOURCE_ROOT; };
 		2CDEAA8128F59E2A00464E30 /* SideMenuView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuView.storyboard; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				2C422C3D293AE3130015CE9D /* LoginModel.swift */,
-				2C422C432949DA060015CE9D /* RegisterModel.swift */,
+				2C422C432949DA060015CE9D /* RegisterEmailAndInformationModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE968FD28EFBBD000E2D068 /* ProfileModel.swift in Sources */,
-				2C422C442949DA060015CE9D /* RegisterModel.swift in Sources */,
+				2C422C442949DA060015CE9D /* RegisterEmailAndInformationModel.swift in Sources */,
 				2C422C3E293AE3130015CE9D /* LoginModel.swift in Sources */,
 				2C422C402949D9850015CE9D /* RegisterIdAndPasswordController.swift in Sources */,
 				2CE968ED28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift in Sources */,

@@ -79,6 +79,9 @@
                             <constraint firstItem="5DK-4e-KGH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="y5u-hD-nAj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="majorTextField" destination="zdS-ob-sj5" id="mn8-8v-EUT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

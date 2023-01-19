@@ -9,12 +9,20 @@ import UIKit
 
 class RegisterEmailAndInformationController: UIViewController {
     
+    @IBOutlet weak var majorTextField: UITextField!
+    
     var id: String?
     var password: String?
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let picker = UIPickerView()
+        picker.delegate = self
+        self.majorTextField.inputView = picker
+        
     }
     
     // MARK: Functions
@@ -48,4 +56,28 @@ class RegisterEmailAndInformationController: UIViewController {
         let userStudentId = NSPredicate(format:"SELF MATCHES %@", studentIdRegEx)
                   return userStudentId.evaluate(with: studentId)
     }
+}
+
+extension RegisterEmailAndInformationController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Majors.data.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Majors.data[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.majorTextField.text = "\(Majors.data[row])"
+    }
+    
 }
