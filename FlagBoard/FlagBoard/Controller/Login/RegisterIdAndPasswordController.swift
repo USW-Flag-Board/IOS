@@ -44,7 +44,7 @@ class RegisterIdAndPasswordController: UIViewController {
         if userId.isEmpty {
             print("아이디가 비어있음")
             return false
-        } else if isValidId(id: userId){
+        } else if !isValidId(id: userId){
             print("아이디 형식이 이상함")
             return false
         }
