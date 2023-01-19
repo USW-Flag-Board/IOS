@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterIdAndPasswordController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
