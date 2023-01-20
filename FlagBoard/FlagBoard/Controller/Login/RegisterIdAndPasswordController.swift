@@ -7,11 +7,16 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class RegisterIdAndPasswordController: UIViewController {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var reconfirmPassword: UITextField!
+    
+    let baseUrl = "http://3.39.36.239:8080"
     
     
     override func viewDidLoad() {
@@ -23,35 +28,31 @@ class RegisterIdAndPasswordController: UIViewController {
 
     // MARK: @IBAction Functions
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        guard let id = idTextField.text, idCheck(id: idTextField.text) else { return }
-        guard let password = passwordTextField.text, passwordCheck(firstPassword: passwordTextField.text, secondPassword: reconfirmPassword.text) else { return }
+        guard let id = idTextField.text, idCheck(id: id) else { return }
+        guard let password = passwordTextField.text,
+              passwordCheck(firstPassword: password, secondPassword: reconfirmPassword.text) else { return }
         
-        let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
-        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
-        
-        registerEmailAndInformationViewController.id = id
-        registerEmailAndInformationViewController.password = password
-
-        self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
+        IdOverlap(id: id)
     }
     
     // MARK: Functions
     
-    // 전체적인 id 체크를 관장하는 함수
+    // id 체크를 관장하는 함수
     func idCheck(id: String?) -> Bool {
         guard let userId = id else { return false }
         
         if userId.isEmpty {
             print("아이디가 비어있음")
             return false
-        } else if !isValidId(id: userId){
+        } else if !isValidId(id: userId) {
             print("아이디 형식이 이상함")
             return false
         }
+        
         return true
     }
     
-    // 전체적인 password 체크를 관장하는 함수
+    // password 체크를 관장하는 함수
     func passwordCheck(firstPassword: String?, secondPassword: String?) -> Bool {
         guard let userFirstPassword = firstPassword else { return false }
         guard let userSecondPassword = secondPassword else { return false }
@@ -97,5 +98,36 @@ class RegisterIdAndPasswordController: UIViewController {
                     }
                 }
         return true
+    }
+    
+    func IdOverlap(id: String) {
+        let url = baseUrl + "/api/auth/"
+        let parameter: Parameters = [
+            "id" : id
+        ]
+        
+        AF.request(url, method: .get,
+                   parameters: parameter,
+                   encoding: URLEncoding.default).response { response in
+            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
+                print("중복된 아이디입니다.")
+                return }
+            
+            print("status code ->", statusCode)
+            
+            self.pushToNextVC()
+            
+        }
+    }
+    
+    func pushToNextVC() {
+        // 다음 화면으로 전환
+        let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
+        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
+
+        registerEmailAndInformationViewController.id = self.idTextField.text
+        registerEmailAndInformationViewController.password = self.passwordTextField.text
+
+        self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
     }
 }
