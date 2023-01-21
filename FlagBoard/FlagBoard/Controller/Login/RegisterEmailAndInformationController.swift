@@ -58,15 +58,15 @@ class RegisterEmailAndInformationController: UIViewController {
         AF.request(url,
                    method: .get,
                    encoding: URLEncoding.default).response { response in
-            
-            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
-                print("중복된 이메일입니다.")
-                return }
-            
-            // 이메일이 중복되지않으면 서버에 유저 정보 전송
-            self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, email: email + "@suwon.ac.kr")
-            
-            print("email overlap status code ->", statusCode)
+
+            if response.response?.statusCode == 200 {
+                
+                // 이메일이 중복되지않으면 서버에 유저 정보 전송
+                self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, email: email + "@suwon.ac.kr")
+                
+            } else {
+                print("이메일 중복으로 인한 실패!")
+            }
         }
         
     }
@@ -76,20 +76,22 @@ class RegisterEmailAndInformationController: UIViewController {
         
 
         // 파라미터 사용
-        let param = ["email":email, "joinType":type, "loginID":id!, "major":major, "name":name, "password":password!, "studentId":studentId]
+        let param = ["email":email, "joinType":type, "loginId":id!, "major":major, "name":name, "password":password!, "studentId":studentId]
         
         AF.request(url,
                    method: .post,
                    parameters: param,
                    encoding: JSONEncoding.default).response { response in
-            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
-                print("회원정보 전송 실패")
-                return }
             
-            // 유저 정보 전송 성공하면 인증번호 발송
-            self.sendAuthNumberToEmail(email: email)
+            if response.response?.statusCode == 200 {
+                
+                // 유저 정보 전송 성공하면 인증번호 발송
+                self.sendAuthNumberToEmail(email: email)
+                
+            } else {
+                print("유저 정보 전송 실패 중복으로 인한 실패!")
+            }
             
-            print("send user info status code ->", statusCode)
         }
     }
     
@@ -102,14 +104,15 @@ class RegisterEmailAndInformationController: UIViewController {
                    method: .post,
                    parameters: param,
                    encoding: JSONEncoding.default).response { response in
-            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
-                print("이메일 전송 실패")
-                return }
             
-            // 이메일 전송 성공하면 다음 화면
-            self.pushToNextVC(email: email)
-            
-            print("send auth number status code ->", statusCode)
+            if response.response?.statusCode == 200 {
+                
+                // 이메일 전송 성공하면 다음 화면
+                self.pushToNextVC(email: email)
+                
+            } else {
+                print("이메일 전송 실패!")
+            }
         }
     }
     

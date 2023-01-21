@@ -109,13 +109,16 @@ class RegisterIdAndPasswordController: UIViewController {
         AF.request(url, method: .get,
                    parameters: parameter,
                    encoding: URLEncoding.default).response { response in
-            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
-                print("중복된 아이디입니다.")
-                return }
+            if response.response?.statusCode == 200 {
+                
+                print("status code ->", response.response?.statusCode)
+                self.pushToNextVC()
+                
+            } else {
+                print("아이디 중복으로 인한 실패!")
+            }
             
-            print("status code ->", statusCode)
             
-            self.pushToNextVC()
             
         }
     }
