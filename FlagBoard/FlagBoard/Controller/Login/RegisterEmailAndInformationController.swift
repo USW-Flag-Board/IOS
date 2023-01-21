@@ -46,12 +46,12 @@ class RegisterEmailAndInformationController: UIViewController {
         guard let email = emailTextField.text, emailCheck(email: email) else { return }
         
         // 위 모든 검사를 통과하면 중복 체크
-        emailOverlap(email: email)
+        emailOverlap(name: name, studentId: studentId, major: major, type: type, email: email)
     }
     
     
     // MARK: Functions
-    private func emailOverlap(email: String) {
+    private func emailOverlap(name: String, studentId: String, major: String, type: String, email:String) {
         var url = baseUrl + "/api/auth/"
         url += email + "@suwon.ac.kr"
         
@@ -63,11 +63,54 @@ class RegisterEmailAndInformationController: UIViewController {
                 print("중복된 이메일입니다.")
                 return }
             
-            print("status code ->", statusCode)
+            // 이메일이 중복되지않으면 서버에 유저 정보 전송
+            self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, email: email + "@suwon.ac.kr")
             
-            self.pushToNextVC()
+            print("email overlap status code ->", statusCode)
         }
         
+    }
+    
+    private func sendUserInfo(name: String, studentId: String, major: String, type: String, email:String) {
+        let url = baseUrl + "/api/auth/join"
+        
+
+        // 파라미터 사용
+        let param = ["email":email, "joinType":type, "loginID":id!, "major":major, "name":name, "password":password!, "studentId":studentId]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: param,
+                   encoding: JSONEncoding.default).response { response in
+            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
+                print("회원정보 전송 실패")
+                return }
+            
+            // 유저 정보 전송 성공하면 인증번호 발송
+            self.sendAuthNumberToEmail(email: email)
+            
+            print("send user info status code ->", statusCode)
+        }
+    }
+    
+    private func sendAuthNumberToEmail(email: String) {
+        let url = baseUrl + "/api/auth/email"
+        
+        let param = ["email" : email]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: param,
+                   encoding: JSONEncoding.default).response { response in
+            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
+                print("이메일 전송 실패")
+                return }
+            
+            // 이메일 전송 성공하면 다음 화면
+            self.pushToNextVC(email: email)
+            
+            print("send auth number status code ->", statusCode)
+        }
     }
     
     func nameCheck(name: String?) -> Bool {
@@ -138,9 +181,11 @@ class RegisterEmailAndInformationController: UIViewController {
                   return userStudentId.evaluate(with: studentId)
     }
     
-    func pushToNextVC() {
+    func pushToNextVC(email: String) {
         let emailVerifyStoryboard = UIStoryboard(name: "EmailVerifyView", bundle: nil)
         guard let emailVerifyViewController = emailVerifyStoryboard.instantiateViewController(withIdentifier: "EmailVerifyVC") as? EmailVerifyController else { return }
+        
+        emailVerifyViewController.email = email
 
         self.navigationController?.pushViewController(emailVerifyViewController, animated: true)
     }
