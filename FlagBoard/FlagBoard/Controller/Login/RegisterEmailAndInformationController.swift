@@ -42,17 +42,18 @@ class RegisterEmailAndInformationController: UIViewController {
             print("전공이 비었습니다!")
             return }
         guard let type = typeTextField.text, !type.isEmpty else { return }
-        guard let email = emailTextField.text, emailCheck(email: email) else { return }
+        guard let emailId = emailTextField.text, emailCheck(emailId: emailId) else { return }
         
         // 위 모든 검사를 통과하면 중복 체크
-        emailOverlap(name: name, studentId: studentId, major: major, type: type, email: email)
+        emailOverlap(name: name, studentId: studentId, major: major, type: type, email: emailId)
     }
     
     
     // MARK: Functions
-    private func emailOverlap(name: String, studentId: String, major: String, type: String, email:String) {
+    private func emailOverlap(name: String, studentId: String, major: String, type: String, emailId:String) {
+        let suwonEmail = emailId + "@suwon.ac.kr"
         var url = baseUrl + "/api/auth/"
-        url += email + "@suwon.ac.kr"
+        url += suwonEmail
         
         AF.request(url,
                    method: .get,
@@ -61,7 +62,7 @@ class RegisterEmailAndInformationController: UIViewController {
             if response.response?.statusCode == 200 {
                 
                 // 이메일이 중복되지않으면 서버에 유저 정보 전송
-                self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, email: email + "@suwon.ac.kr")
+                self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, suwonEmail: suwonEmail)
                 
             } else {
                 print("이메일 중복으로 인한 실패!")
@@ -70,12 +71,12 @@ class RegisterEmailAndInformationController: UIViewController {
         
     }
     
-    private func sendUserInfo(name: String, studentId: String, major: String, type: String, email:String) {
+    private func sendUserInfo(name: String, studentId: String, major: String, type: String, suwonEmail:String) {
         let url = baseUrl + "/api/auth/join"
         
 
         // 파라미터 사용
-        let param = ["email":email, "joinType":type, "loginId":id!, "major":major, "name":name, "password":password!, "studentId":studentId]
+        let param = ["email":suwonEmail, "joinType":type, "loginId":id!, "major":major, "name":name, "password":password!, "studentId":studentId]
         
         AF.request(url,
                    method: .post,
@@ -85,7 +86,7 @@ class RegisterEmailAndInformationController: UIViewController {
             if response.response?.statusCode == 200 {
                 
                 // 유저 정보 전송 성공하면 인증번호 발송
-                self.sendAuthNumberToEmail(email: email)
+                self.sendAuthNumberToEmail(suwonEmail: suwonEmail)
                 
             } else {
                 print("유저 정보 전송 실패 중복으로 인한 실패!")
@@ -94,10 +95,10 @@ class RegisterEmailAndInformationController: UIViewController {
         }
     }
     
-    private func sendAuthNumberToEmail(email: String) {
+    private func sendAuthNumberToEmail(suwonEmail: String) {
         let url = baseUrl + "/api/auth/email"
         
-        let param = ["email" : email]
+        let param = ["email" : suwonEmail]
         
         AF.request(url,
                    method: .post,
@@ -107,7 +108,7 @@ class RegisterEmailAndInformationController: UIViewController {
             if response.response?.statusCode == 200 {
                 
                 // 이메일 전송 성공하면 다음 화면
-                self.pushToNextVC(email: email)
+                self.pushToNextVC(suwonEmail: suwonEmail)
                 
             } else {
                 print("이메일 전송 실패!")
@@ -143,11 +144,11 @@ class RegisterEmailAndInformationController: UIViewController {
         return true
     }
     
-    func emailCheck(email: String?) -> Bool {
-        guard let userEmail = email else { return false }
-        let userSuwonEmail = userEmail + "@suwon.ac.kr"
+    func emailCheck(emailId: String?) -> Bool {
+        guard let userEmailId = emailId else { return false }
+        let userSuwonEmail = userEmailId + "@suwon.ac.kr"
         
-        if userEmail.isEmpty {
+        if userEmailId.isEmpty {
             print("이메일이 비었습니다!")
             return false
         } else if !RegisterModel.isValidEmail(email: userSuwonEmail) {
@@ -158,11 +159,11 @@ class RegisterEmailAndInformationController: UIViewController {
         return true
     }
     
-    func pushToNextVC(email: String) {
+    func pushToNextVC(suwonEmail: String) {
         let emailVerifyStoryboard = UIStoryboard(name: "EmailVerifyView", bundle: nil)
         guard let emailVerifyViewController = emailVerifyStoryboard.instantiateViewController(withIdentifier: "EmailVerifyVC") as? EmailVerifyController else { return }
         
-        emailVerifyViewController.email = email
+        emailVerifyViewController.email = suwonEmail
 
         self.navigationController?.pushViewController(emailVerifyViewController, animated: true)
     }
