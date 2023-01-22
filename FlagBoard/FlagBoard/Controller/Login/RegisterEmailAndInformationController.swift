@@ -45,7 +45,7 @@ class RegisterEmailAndInformationController: UIViewController {
         guard let emailId = emailTextField.text, emailCheck(emailId: emailId) else { return }
         
         // 위 모든 검사를 통과하면 중복 체크
-        emailOverlap(name: name, studentId: studentId, major: major, type: type, email: emailId)
+        emailOverlap(name: name, studentId: studentId, major: major, type: type, emailId: emailId)
     }
     
     
