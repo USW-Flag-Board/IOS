@@ -8,7 +8,7 @@
 import UIKit
 
 import Alamofire
-import SwiftyJSON
+
 
 class RegisterIdAndPasswordController: UIViewController {
 
@@ -18,11 +18,11 @@ class RegisterIdAndPasswordController: UIViewController {
     
     let baseUrl = "http://3.39.36.239:8080"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
 
@@ -32,6 +32,7 @@ class RegisterIdAndPasswordController: UIViewController {
         guard let password = passwordTextField.text,
               passwordCheck(firstPassword: password, secondPassword: reconfirmPassword.text) else { return }
         
+        // 위 조건들을 통과할 경우 id 확인
         IdOverlap(id: id)
     }
     
@@ -44,7 +45,7 @@ class RegisterIdAndPasswordController: UIViewController {
         if userId.isEmpty {
             print("아이디가 비어있음")
             return false
-        } else if !isValidId(id: userId) {
+        } else if !RegisterModel.isValidId(id: userId) {
             print("아이디 형식이 이상함")
             return false
         }
@@ -63,40 +64,13 @@ class RegisterIdAndPasswordController: UIViewController {
         } else if userSecondPassword.isEmpty {
             print("두번째 비밀번호가 비어있음")
             return false
-        } else if !isValidPassword(password: userFirstPassword) {
+        } else if !RegisterModel.isValidPassword(password: userFirstPassword) {
             print("비밀번호 자릿수가 이상함")
             return false
-        } else if !confirmPassword(first: userFirstPassword, second: userSecondPassword) {
+        } else if !RegisterModel.confirmPassword(first: userFirstPassword, second: userSecondPassword) {
             print("비밀번호가 일치하지 않음")
             return false
         }
-        return true
-    }
-    
-    // 비밀번호 재확인
-    func confirmPassword(first: String, second: String) -> Bool {
-        
-        if(first != second) {
-            return false
-        }
-        return true
-    }
-    
-    // id 형식 검사
-    func isValidId(id: String?) -> Bool {
-        let idRegEx = "^[0-9a-zA-Z]{6,12}$"
-        
-        let userId = NSPredicate(format:"SELF MATCHES %@", idRegEx)
-                  return userId.evaluate(with: id)
-    }
-    
-    // 비밀 번호 자릿수 검사 8~20
-    func isValidPassword(password: String?) -> Bool {
-        if let userPassword = password {
-            if userPassword.count < 8 || userPassword.count > 20 {
-                        return false
-                    }
-                }
         return true
     }
     
@@ -111,7 +85,7 @@ class RegisterIdAndPasswordController: UIViewController {
                    encoding: URLEncoding.default).response { response in
             if response.response?.statusCode == 200 {
                 
-                print("status code ->", response.response?.statusCode)
+                //print("status code ->", response.response?.statusCode)
                 self.pushToNextVC()
                 
             } else {
