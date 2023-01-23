@@ -52,17 +52,21 @@ class RegisterEmailAndInformationController: UIViewController {
     // MARK: Functions
     private func emailOverlap(name: String, studentId: String, major: String, type: String, emailId:String) {
         let suwonEmail = emailId + "@suwon.ac.kr"
-        var url = baseUrl + "/api/auth/"
-        url += suwonEmail
+        let url = baseUrl + "/api/auth/check/email"
+        
+        let param: Parameters = [
+            "email" : suwonEmail
+        ]
         
         AF.request(url,
-                   method: .get,
-                   encoding: URLEncoding.default).response { response in
+                   method: .post,
+                   parameters: param,
+                   encoding: JSONEncoding.default).response { response in
 
             if response.response?.statusCode == 200 {
                 
                 // 이메일이 중복되지않으면 서버에 유저 정보 전송
-                self.sendUserInfo(name: name, studentId: studentId, major: major, type: type, suwonEmail: suwonEmail)
+                self.sendUserInfoAndEmail(name: name, studentId: studentId, major: major, type: type, suwonEmail: suwonEmail)
                 
             } else {
                 print("이메일 중복으로 인한 실패!")
@@ -71,7 +75,7 @@ class RegisterEmailAndInformationController: UIViewController {
         
     }
     
-    private func sendUserInfo(name: String, studentId: String, major: String, type: String, suwonEmail:String) {
+    private func sendUserInfoAndEmail(name: String, studentId: String, major: String, type: String, suwonEmail:String) {
         let url = baseUrl + "/api/auth/join"
         
 
@@ -85,34 +89,13 @@ class RegisterEmailAndInformationController: UIViewController {
             
             if response.response?.statusCode == 200 {
                 
-                // 유저 정보 전송 성공하면 인증번호 발송
-                self.sendAuthNumberToEmail(suwonEmail: suwonEmail)
+                // 유저 정보 및 이메일 전송 성공하면 다음 화면
+                self.pushToNextVC(suwonEmail: suwonEmail)
                 
             } else {
                 print("유저 정보 전송 실패 중복으로 인한 실패!")
             }
             
-        }
-    }
-    
-    private func sendAuthNumberToEmail(suwonEmail: String) {
-        let url = baseUrl + "/api/auth/email"
-        
-        let param = ["email" : suwonEmail]
-        
-        AF.request(url,
-                   method: .post,
-                   parameters: param,
-                   encoding: JSONEncoding.default).response { response in
-            
-            if response.response?.statusCode == 200 {
-                
-                // 이메일 전송 성공하면 다음 화면
-                self.pushToNextVC(suwonEmail: suwonEmail)
-                
-            } else {
-                print("이메일 전송 실패!")
-            }
         }
     }
     

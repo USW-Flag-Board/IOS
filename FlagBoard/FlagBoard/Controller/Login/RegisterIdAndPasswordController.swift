@@ -31,7 +31,7 @@ class RegisterIdAndPasswordController: UIViewController {
         guard let id = idTextField.text, idCheck(id: id) else { return }
         guard let password = passwordTextField.text,
               passwordCheck(firstPassword: password, secondPassword: reconfirmPassword.text) else { return }
-        
+    
         // 위 조건들을 통과할 경우 id 확인
         IdOverlap(id: id)
     }
@@ -75,20 +75,20 @@ class RegisterIdAndPasswordController: UIViewController {
     }
     
     func IdOverlap(id: String) {
-        let url = baseUrl + "/api/auth/"
+        let url = baseUrl + "/api/auth/check/id"
         let parameter: Parameters = [
-            "id" : id
+            "loginId" : id
         ]
         
-        AF.request(url, method: .get,
+        AF.request(url, method: .post,
                    parameters: parameter,
-                   encoding: URLEncoding.default).response { response in
+                   encoding: JSONEncoding.default).response { response in
             if response.response?.statusCode == 200 {
                 
-                //print("status code ->", response.response?.statusCode)
                 self.pushToNextVC()
                 
             } else {
+                print("status code ->", response.response?.statusCode)
                 print("아이디 중복으로 인한 실패!")
             }
             

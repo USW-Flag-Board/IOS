@@ -27,10 +27,10 @@ class EmailVerifyController: UIViewController {
             print("인증번호가 비어있습니다")
             return }
         
-        sendAuthNum(email: email!, authNumber: authNumber)
+        signUp(email: email!, authNumber: authNumber)
     }
     
-    private func sendAuthNum(email: String, authNumber: String) {
+    private func signUp(email: String, authNumber: String) {
         let url = baseUrl + "/api/auth/sign-up"
         
         // 파라미터 사용
