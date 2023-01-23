@@ -56,6 +56,29 @@ class LoginController: UIViewController {
         return true
     }
     
+    func moveToMainTap() {
+        
+        let mainViewStoryboard = UIStoryboard(name: "MainView", bundle: nil)
+        guard let mainViewController = mainViewStoryboard.instantiateViewController(withIdentifier: "mainTabView") as? TabBarController else { return }
+        
+        self.navigationController?.pushViewController(mainViewController, animated: true)
+        
+    }
+    
+    func shakeLabel(label: UILabel) -> Void{
+        UIView.animate(withDuration: 0.1, animations: {
+            label.frame.origin.x -= 7
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.1, animations: {
+                label.frame.origin.x += 14
+             }, completion: { _ in
+                 UIView.animate(withDuration: 0.1, animations: {
+                    label.frame.origin.x -= 7
+                })
+            })
+        })
+    }
+    
     private func login(id: String, password: String) {
         var url = "http://3.39.36.239:8080" + "/api/auth/"
         let parameter: Parameters = [
@@ -68,10 +91,18 @@ class LoginController: UIViewController {
                    encoding: JSONEncoding.default).responseJSON { response in
             
             if response.response?.statusCode == 200 {
-                
+                self.moveToMainTap()
             } else {
+                
+                //또 틀리면 경고문 흔들기
+                if self.loginStatusLabel.text != "" {
+                    self.shakeLabel(label: self.loginStatusLabel)
+                }
+                
                 self.loginStatusLabel.text = "로그인 실패. 아이디와 비밀번호를 다시 입력해주세요."
                 self.loginStatusLabel.textColor = UIColor.red
+                
+                
             }
             
             print("----------------------")
@@ -83,5 +114,11 @@ class LoginController: UIViewController {
             
     }
     
+    
+    @IBAction func goToMainTestButton(_ sender: Any) {
+        self.moveToMainTap()
+    }
+    
+
     
 }
