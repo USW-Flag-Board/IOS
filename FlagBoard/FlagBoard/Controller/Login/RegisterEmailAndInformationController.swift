@@ -21,7 +21,7 @@ class RegisterEmailAndInformationController: UIViewController {
     var id: String?
     var password: String?
     
-    let baseUrl = "http://3.39.36.239:8080"
+    let baseUrl = API.BASE_URL
     
     override func viewDidLoad() {
         super.viewDidLoad()

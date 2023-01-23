@@ -16,7 +16,7 @@ class RegisterIdAndPasswordController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var reconfirmPassword: UITextField!
     
-    let baseUrl = "http://3.39.36.239:8080"
+    let baseUrl = API.BASE_URL
     
     override func viewDidLoad() {
         super.viewDidLoad()

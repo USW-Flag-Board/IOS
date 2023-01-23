@@ -27,7 +27,7 @@
 		2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85A1E28EA80FA00EC6016 /* SceneDelegate.swift */; };
 		2CE85A2628EA80FB00EC6016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85A2528EA80FB00EC6016 /* Assets.xcassets */; };
 		2CE968E528EFB88000E2D068 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968E428EFB88000E2D068 /* extension.swift */; };
-		2CE968E728EFB89200E2D068 /* network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968E628EFB89200E2D068 /* network.swift */; };
+		2CE968E728EFB89200E2D068 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968E628EFB89200E2D068 /* Network.swift */; };
 		2CE968ED28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968EC28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift */; };
 		2CE968EF28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968EE28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard */; };
 		2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968F028EFB9E100E2D068 /* BulletinBoardSelectionController.swift */; };
@@ -39,6 +39,7 @@
 		2CFDE779297917B2009695BA /* EmailVerifyView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFDE778297917B2009695BA /* EmailVerifyView.storyboard */; };
 		2CFDE77B297917C8009695BA /* EmailVerifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDE77A297917C8009695BA /* EmailVerifyController.swift */; };
 		2CFDE77D297A637C009695BA /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDE77C297A637C009695BA /* RegisterModel.swift */; };
+		2CFDE77F297ED4AB009695BA /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDE77E297ED4AB009695BA /* AlamofireManager.swift */; };
 		53733250290C8B3100D6DE25 /* FreeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373324F290C8B3100D6DE25 /* FreeBoardViewController.swift */; };
 		53733253290C908C00D6DE25 /* FreeBoardXibViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53733251290C908C00D6DE25 /* FreeBoardXibViewCell.swift */; };
 		53733254290C908C00D6DE25 /* FreeBoardXibViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53733252290C908C00D6DE25 /* FreeBoardXibViewCell.xib */; };
@@ -71,7 +72,7 @@
 		2CE85A2528EA80FB00EC6016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE85A2A28EA80FB00EC6016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE968E428EFB88000E2D068 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
-		2CE968E628EFB89200E2D068 /* network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = network.swift; sourceTree = "<group>"; };
+		2CE968E628EFB89200E2D068 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2CE968EC28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoardSelectionModel.swift; sourceTree = "<group>"; };
 		2CE968EE28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BulletinBoardSelectionView.storyboard; sourceTree = "<group>"; };
 		2CE968F028EFB9E100E2D068 /* BulletinBoardSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoardSelectionController.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		2CFDE778297917B2009695BA /* EmailVerifyView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailVerifyView.storyboard; sourceTree = "<group>"; };
 		2CFDE77A297917C8009695BA /* EmailVerifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyController.swift; sourceTree = "<group>"; };
 		2CFDE77C297A637C009695BA /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		2CFDE77E297ED4AB009695BA /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		403779DE585FDF34D23A003D /* Pods-FlagBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.release.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.release.xcconfig"; sourceTree = "<group>"; };
 		45BADE8B62D0B361CB0AA07E /* Pods-FlagBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagBoard.debug.xcconfig"; path = "Target Support Files/Pods-FlagBoard/Pods-FlagBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		5373324F290C8B3100D6DE25 /* FreeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeBoardViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +213,8 @@
 		2CE968E228EFB7D400E2D068 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2CE968E628EFB89200E2D068 /* network.swift */,
+				2CE968E628EFB89200E2D068 /* Network.swift */,
+				2CFDE77E297ED4AB009695BA /* AlamofireManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -478,7 +481,7 @@
 				2CE968ED28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift in Sources */,
 				2CE85A1D28EA80FA00EC6016 /* AppDelegate.swift in Sources */,
 				2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */,
-				2CE968E728EFB89200E2D068 /* network.swift in Sources */,
+				2CE968E728EFB89200E2D068 /* Network.swift in Sources */,
 				2CDEAA7D28F59CB800464E30 /* SideMenuController.swift in Sources */,
 				2C422C3429290D7B0015CE9D /* BulletinBoardCommentCell.swift in Sources */,
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
@@ -488,6 +491,7 @@
 				53733253290C908C00D6DE25 /* FreeBoardXibViewCell.swift in Sources */,
 				53733256291159C700D6DE25 /* FreeBoardModel.swift in Sources */,
 				2CFDE77D297A637C009695BA /* RegisterModel.swift in Sources */,
+				2CFDE77F297ED4AB009695BA /* AlamofireManager.swift in Sources */,
 				2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */,
 				2CFDE774297912A8009695BA /* RegisterEmailAndInformationController.swift in Sources */,
 				2C422C2F292885D60015CE9D /* BulletinBoardDetailController.swift in Sources */,
