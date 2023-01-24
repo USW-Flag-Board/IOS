@@ -14,7 +14,6 @@ class EmailVerifyController: UIViewController {
     @IBOutlet weak var authNumTextField: UITextField!
     
     var email: String?
-    let baseUrl = API.BASE_URL
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,8 +19,6 @@ class RegisterIdAndPasswordController: UIViewController {
     var id: String = ""
     var password: String = ""
     
-    let baseUrl = API.BASE_URL
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

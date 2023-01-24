@@ -26,8 +26,6 @@ class RegisterEmailAndInformationController: UIViewController {
     var joinType = ""
     var email = ""
     
-    let baseUrl = API.BASE_URL
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
