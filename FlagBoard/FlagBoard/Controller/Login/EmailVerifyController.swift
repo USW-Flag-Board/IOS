@@ -24,28 +24,33 @@ class EmailVerifyController: UIViewController {
     
     // MARK: @IBAction Functions
     @IBAction func AuthenticateButtonPressed(_ sender: UIButton) {
-        guard let authNumber = authNumTextField.text, !authNumber.isEmpty else {
+        guard let certification = authNumTextField.text, !certification.isEmpty else {
             print("인증번호가 비어있습니다")
             return }
         
-        signUp(email: email!, authNumber: authNumber)
+        signUp(email: email!, certification: certification)
     }
     
     // MARK: Functions
-    private func signUp(email: String, authNumber: String) {
-        let url = baseUrl + "/api/auth/sign-up"
+    private func signUp(email: String, certification: String) {
         
-        let param = ["email":email, "certification":authNumber]
-        
-        AF.request(url,
-                   method: .post,
-                   parameters: param,
-                   encoding: JSONEncoding.default).response { response in
-            guard let statusCode = response.response?.statusCode, statusCode == 200 else {
-                print("인증번호 전송 실패")
-                return }
-            
-            print("sign up status code ->", statusCode)
+        AlamofireManger
+                    .shared
+                    .session
+                    .request(AuthRouter.signUp(email: email, certification: certification))
+                    .response { response in
+                    guard let statusCode = response.response?.statusCode else { return }
+                    
+                    switch statusCode {
+                    case 200:
+                        print("회원가입 성공")
+                    case 404:
+                        print("존재하지 않는 가입정보입니다.")
+                    case 409:
+                        print("인증번호가 일치하지 않습니다.")
+                    default:
+                        print("other code ->", statusCode)
+                    }
         }
     }
 }

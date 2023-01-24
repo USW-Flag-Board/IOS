@@ -64,52 +64,54 @@ class RegisterEmailAndInformationController: UIViewController {
     
     // MARK: Functions
     private func emailOverlap(email: String) {
-        let url = baseUrl + "/api/auth/check/email"
         
-        let param: Parameters = [
-            "email" : email
-        ]
-        
-        AF.request(url,
-                   method: .post,
-                   parameters: param,
-                   encoding: JSONEncoding.default).response { response in
-
-            if response.response?.statusCode == 200 {
-                
-                // 이메일이 중복되지않으면 서버에 유저 정보 전송, 인증번호 요청
+        AlamofireManger
+            .shared
+            .session
+            .request(AuthRouter.checkEmail(email: email)).response { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            
+            switch statusCode {
+            case 200:
+                print("사용 가능한 이메일입니다.")
                 self.sendUserInfoAndEmail(name: self.name, studentId: self.studentId,
                                           major: self.major, joinType: self.joinType,
                                           email: self.email)
-                
-            } else {
-                print("이메일 중복으로 인한 실패!")
+            case 400:
+                print("이메일 형식이 아닙니다.")
+            case 409:
+                print("이미 사용 중인 이메일입니다.")
+            case 422:
+                print("수원대학교 웹 메일 주소가 아닙니다.")
+            default:
+                print("other code ->", statusCode)
             }
         }
-        
     }
     
     private func sendUserInfoAndEmail(name: String, studentId: String, major: String,
                                       joinType: String, email:String) {
-        let url = baseUrl + "/api/auth/join"
         
-        let param = ["email" : email, "joinType" : joinType, "loginId" : id!, "major" : major,
-                     "name" : name, "password" : password!, "studentId" : studentId]
-        
-        AF.request(url,
-                   method: .post,
-                   parameters: param,
-                   encoding: JSONEncoding.default).response { response in
-            
-            if response.response?.statusCode == 200 {
+        AlamofireManger
+            .shared
+            .session
+            .request(AuthRouter.sendAuthInfo(id: id!, password: password!, name: name,
+                                             studentId: studentId, email: email, major: major,
+                                             joinType: joinType)).response { response in
                 
-                // 유저 정보 및 이메일 전송 성공하면 다음 화면
+            guard let statusCode = response.response?.statusCode else { return }
+            
+            switch statusCode {
+            case 200:
+                print("회원정보 입력 성공 및 메일 발송 완료")
                 self.pushToNextVC(email: self.email)
-                
-            } else {
-                print("유저 정보 전송 실패 중복으로 인한 실패!")
+            case 422:
+                print("사용할 수 없는 비밀번호 입니다. (8~20자 이내 영문, 숫자, 특수문자를 모두 포함)")
+            case 500:
+                print("서버 에러입니다. 관리자에게 문의해주세요.")
+            default:
+                print("other code ->", statusCode)
             }
-            
         }
     }
     

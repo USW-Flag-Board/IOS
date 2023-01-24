@@ -13,9 +13,15 @@ final class AlamofireManger {
     
     static let shared = AlamofireManger()
     
+    let interceptors = Interceptor(interceptors: [
+        BaseInterceptor()
+    ])
+    
+    let monitors = [MyLogger()] as [EventMonitor]
+    
     var session: Session
     
     private init() {
-            session = Session()
+        session = Session(interceptor: interceptors, eventMonitors: monitors)
     }
 }

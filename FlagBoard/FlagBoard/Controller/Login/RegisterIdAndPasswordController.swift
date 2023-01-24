@@ -33,7 +33,8 @@ class RegisterIdAndPasswordController: UIViewController {
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         guard let id = idTextField.text, idCheck(id: id) else { return }
         guard let password = passwordTextField.text,
-              passwordCheck(firstPassword: password, secondPassword: reconfirmPassword.text) else { return }
+              passwordCheck(firstPassword: password,
+                            secondPassword: reconfirmPassword.text) else { return }
     
         // 전역 변수에 넣기
         self.id = id
@@ -43,10 +44,9 @@ class RegisterIdAndPasswordController: UIViewController {
         IdOverlap(id: self.id)
     }
     
-    // MARK: Functions
     
-    // id 체크를 관장하는 함수
-    func idCheck(id: String?) -> Bool {
+    // MARK: Functions
+    func idCheck(id: String?) -> Bool { // id 체크를 관장하는 함수
         guard let userId = id else { return false }
         
         if userId.isEmpty {
@@ -59,6 +59,7 @@ class RegisterIdAndPasswordController: UIViewController {
         
         return true
     }
+    
     
     // password 체크를 관장하는 함수
     func passwordCheck(firstPassword: String?, secondPassword: String?) -> Bool {
@@ -74,7 +75,8 @@ class RegisterIdAndPasswordController: UIViewController {
         } else if !RegisterModel.isValidPassword(password: userFirstPassword) {
             print("비밀번호 자릿수가 이상함")
             return false
-        } else if !RegisterModel.confirmPassword(first: userFirstPassword, second: userSecondPassword) {
+        } else if !RegisterModel.confirmPassword(first: userFirstPassword,
+                                                 second: userSecondPassword) {
             print("비밀번호가 일치하지 않음")
             return false
         }
@@ -82,25 +84,18 @@ class RegisterIdAndPasswordController: UIViewController {
     }
     
     func IdOverlap(id: String) {
-        let url = baseUrl + "/api/auth/check/id"
-        let parameter: Parameters = [
-            "loginId" : id
-        ]
-        
-        AF.request(url, method: .post,
-                   parameters: parameter,
-                   encoding: JSONEncoding.default).response { response in
-            if response.response?.statusCode == 200 {
-                
+        AlamofireManger.shared.session.request(AuthRouter.checkId(id: id)).response { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            
+            switch statusCode {
+            case 200:
+                print("사용 가능한 아이디입니다.")
                 self.pushToNextVC(id: self.id, password: self.password)
-                
-            } else {
-                print("status code ->", response.response?.statusCode)
-                print("아이디 중복으로 인한 실패!")
+            case 409:
+                print("이미 사용 중인 아이디입니다.")
+            default:
+                print("other code ->", statusCode)
             }
-            
-            
-            
         }
     }
     
