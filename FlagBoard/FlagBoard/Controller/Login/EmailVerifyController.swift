@@ -22,6 +22,7 @@ class EmailVerifyController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: @IBAction Functions
     @IBAction func AuthenticateButtonPressed(_ sender: UIButton) {
         guard let authNumber = authNumTextField.text, !authNumber.isEmpty else {
             print("인증번호가 비어있습니다")
@@ -30,10 +31,10 @@ class EmailVerifyController: UIViewController {
         signUp(email: email!, authNumber: authNumber)
     }
     
+    // MARK: Functions
     private func signUp(email: String, authNumber: String) {
         let url = baseUrl + "/api/auth/sign-up"
         
-        // 파라미터 사용
         let param = ["email":email, "certification":authNumber]
         
         AF.request(url,
@@ -47,14 +48,4 @@ class EmailVerifyController: UIViewController {
             print("sign up status code ->", statusCode)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

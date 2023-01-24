@@ -16,6 +16,9 @@ class RegisterIdAndPasswordController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var reconfirmPassword: UITextField!
     
+    var id: String = ""
+    var password: String = ""
+    
     let baseUrl = API.BASE_URL
     
     override func viewDidLoad() {
@@ -32,8 +35,12 @@ class RegisterIdAndPasswordController: UIViewController {
         guard let password = passwordTextField.text,
               passwordCheck(firstPassword: password, secondPassword: reconfirmPassword.text) else { return }
     
+        // 전역 변수에 넣기
+        self.id = id
+        self.password = password
+        
         // 위 조건들을 통과할 경우 id 확인
-        IdOverlap(id: id)
+        IdOverlap(id: self.id)
     }
     
     // MARK: Functions
@@ -85,7 +92,7 @@ class RegisterIdAndPasswordController: UIViewController {
                    encoding: JSONEncoding.default).response { response in
             if response.response?.statusCode == 200 {
                 
-                self.pushToNextVC()
+                self.pushToNextVC(id: self.id, password: self.password)
                 
             } else {
                 print("status code ->", response.response?.statusCode)
@@ -97,13 +104,13 @@ class RegisterIdAndPasswordController: UIViewController {
         }
     }
     
-    func pushToNextVC() {
+    func pushToNextVC(id: String, password: String) {
         // 다음 화면으로 전환
         let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
         guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
 
-        registerEmailAndInformationViewController.id = self.idTextField.text
-        registerEmailAndInformationViewController.password = self.passwordTextField.text
+        registerEmailAndInformationViewController.id = id
+        registerEmailAndInformationViewController.password = password
 
         self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
     }
