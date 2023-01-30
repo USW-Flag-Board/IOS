@@ -27,7 +27,9 @@ class EmailVerifyController: UIViewController {
             print("인증번호가 비어있습니다")
             return }
         
-        signUp(email: email!, certification: certification)
+        if let email = self.email {
+            signUp(email: email, certification: certification)
+        }
     }
     
     // MARK: Functions
