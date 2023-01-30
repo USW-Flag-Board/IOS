@@ -87,8 +87,9 @@ class RegisterEmailAndInformationController: UIViewController {
         }
     }
     
-    private func sendUserInfoAndEmail(name: String, studentId: String, major: String,
-                                      joinType: String, email:String) {
+    private func sendUserInfoAndEmail(name: String, studentId: String,
+                                      major: String, joinType: String,
+                                      email:String) {
         
         AlamofireManger
             .shared
