@@ -26,7 +26,7 @@ enum AuthRouter: URLRequestConvertible {
     }
     
     
-    var endPoint: String {
+    var path: String {
         switch self {
         case .checkId:
             return "/api/auth/check/id"
