@@ -117,44 +117,47 @@ class RegisterEmailAndInformationController: UIViewController {
     func nameCheck(name: String?) -> Bool {
         guard let userName = name else { return false }
         
-        if userName.isEmpty {
+        switch userName {
+        case let name where name.isEmpty:
             print("이름이 비었습니다!")
             return false
-        } else if !RegisterModel.isValidName(name: userName) {
+        case let name where !RegisterModel.isValidId(id: name):
             print("이름의 형식이 틀렸습니다!")
             return false
+        default:
+            return true
         }
-        
-        return true
     }
     
     func studentIdCheck(studentId: String?) -> Bool {
         guard let userStudentId = studentId else { return false }
         
-        if userStudentId.isEmpty {
+        switch userStudentId {
+        case let studentId where studentId.isEmpty:
             print("학번이 비었습니다!")
             return false
-        } else if !RegisterModel.isValidStudentId(studentId: userStudentId) {
+        case let studentId where !RegisterModel.isValidStudentId(studentId: studentId):
             print("학번의 형식이 틀렸습니다!")
             return false
+        default:
+            return true
         }
-        
-        return true
     }
     
     func emailCheck(emailId: String?) -> Bool {
         guard let userEmailId = emailId else { return false }
-        let userSuwonEmail = userEmailId + "@suwon.ac.kr"
+        let userEmail = userEmailId + "@suwon.ac.kr"
         
-        if userEmailId.isEmpty {
-            print("이메일이 비었습니다!")
+        switch userEmail {
+        case let email where email.isEmpty:
+            print("학번이 비었습니다!")
             return false
-        } else if !RegisterModel.isValidEmail(email: userSuwonEmail) {
-            print("이메일의 형식이 틀렸습니다!")
+        case let email where !RegisterModel.isValidEmail(email: email):
+            print("학번의 형식이 틀렸습니다!")
             return false
+        default:
+            return true
         }
-        
-        return true
     }
     
     func pushToNextVC(email: String) {

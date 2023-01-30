@@ -47,15 +47,16 @@ class RegisterIdAndPasswordController: UIViewController {
     func idCheck(id: String?) -> Bool { // id 체크를 관장하는 함수
         guard let userId = id else { return false }
         
-        if userId.isEmpty {
+        switch userId {
+        case let id where id.isEmpty:
             print("아이디가 비어있음")
             return false
-        } else if !RegisterModel.isValidId(id: userId) {
-            print("아이디 형식이 이상함")
+        case let id where !RegisterModel.isValidId(id: id):
+            print("아이디의 형식이 이상함")
             return false
+        default:
+            return true
         }
-        
-        return true
     }
     
     
@@ -64,21 +65,23 @@ class RegisterIdAndPasswordController: UIViewController {
         guard let userFirstPassword = firstPassword else { return false }
         guard let userSecondPassword = secondPassword else { return false }
         
-        if userFirstPassword.isEmpty {
+        switch (userFirstPassword, userSecondPassword) {
+        case let (firstPassword, _) where firstPassword.isEmpty:
             print("첫번째 비밀번호가 비어있음")
             return false
-        } else if userSecondPassword.isEmpty {
+        case let (_, secondPassword) where secondPassword.isEmpty:
             print("두번째 비밀번호가 비어있음")
             return false
-        } else if !RegisterModel.isValidPassword(password: userFirstPassword) {
+        case let (firstPassword, _) where !RegisterModel.isValidPassword(password: firstPassword):
             print("비밀번호 자릿수가 이상함")
             return false
-        } else if !RegisterModel.confirmPassword(first: userFirstPassword,
-                                                 second: userSecondPassword) {
+        case let (firstPassword, secondPassword)
+            where !RegisterModel.confirmPassword(first: firstPassword, second: secondPassword):
             print("비밀번호가 일치하지 않음")
             return false
+        default:
+            return true
         }
-        return true
     }
     
     func IdOverlap(id: String) {

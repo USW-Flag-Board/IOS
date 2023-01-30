@@ -9,14 +9,6 @@ import Foundation
 
 // 사용자 등록 모델
 struct RegisterModel {
-
-    var name: String?
-    var loginId: String?
-    var password: String?
-    var email: String?
-    var major: String?
-    var studentId: String?
-    var joinType: String?
     
     // 아이디 형식 검사
     static func isValidId(id: String?) -> Bool {
