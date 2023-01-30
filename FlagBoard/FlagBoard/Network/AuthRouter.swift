@@ -107,7 +107,7 @@ enum AuthRouter: URLRequestConvertible {
         
     
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(endPoint)
+        let url = baseURL.appendingPathComponent(path)
         
         var request = URLRequest(url: url)
         
