@@ -18,4 +18,10 @@ class SideMenuController: UIViewController {
         
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        let registerIdAndPasswordStoryboard = UIStoryboard(name: "RegisterIdAndPasswordView", bundle: nil)
+        guard let RegisterIdAndPasswordViewController = registerIdAndPasswordStoryboard.instantiateViewController(withIdentifier: "RegisterIdAndPasswordVC") as? RegisterIdAndPasswordController else { return }
+
+        self.navigationController?.pushViewController(RegisterIdAndPasswordViewController, animated: true)
+    }
 }

@@ -62,7 +62,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                 <connections>
-                                    <action selector="didTabRegisterButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="05P-UL-piH"/>
+                                    <action selector="registerButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ciA-9o-FFe"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-ns-3oY">
