@@ -121,7 +121,7 @@ class RegisterEmailAndInformationController: UIViewController {
         case let name where name.isEmpty:
             print("이름이 비었습니다!")
             return false
-        case let name where !RegisterModel.isValidId(id: name):
+        case let name where !RegisterModel.isValidName(name: name):
             print("이름의 형식이 틀렸습니다!")
             return false
         default:
