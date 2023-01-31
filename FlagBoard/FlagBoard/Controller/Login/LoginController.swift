@@ -61,7 +61,7 @@ class LoginController: UIViewController {
         let mainViewStoryboard = UIStoryboard(name: "MainView", bundle: nil)
         guard let mainViewController = mainViewStoryboard.instantiateViewController(withIdentifier: "mainTabView") as? TabBarController else { return }
         
-        self.navigationController?.pushViewController(mainViewController, animated: true)
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -80,14 +80,15 @@ class LoginController: UIViewController {
     }
     
     private func login(id: String, password: String) {
-        var url = "http://3.39.36.239:8080" + "/api/auth/"
+        var url = "http://3.39.36.239:8080" + "/api/auth/login"
         let parameter: Parameters = [
-            "loginId": "gmlwh124",
-            "password": "qwer1234!"
+            "loginId": id,
+            "password": password
         ]
         
         AF.request(url,
                    method: .post,
+                   parameters: parameter,
                    encoding: JSONEncoding.default).responseJSON { response in
             
             if response.response?.statusCode == 200 {
