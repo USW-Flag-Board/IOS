@@ -19,6 +19,7 @@
 		2C422C422949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C422C412949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard */; };
 		2C694422298948ED00C268BE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C694421298948ED00C268BE /* AuthService.swift */; };
 		2C69442429894A0B00C268BE /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69442329894A0B00C268BE /* AuthModel.swift */; };
+		2C6944262989ECA300C268BE /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6944252989ECA300C268BE /* KeyChainManager.swift */; };
 		2CDEAA7528EFC2AA00464E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968FF28EFBE1800E2D068 /* LaunchScreen.storyboard */; };
 		2CDEAA7628EFC2AE00464E30 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9690128EFBE1800E2D068 /* MainView.storyboard */; };
 		2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */; };
@@ -68,6 +69,7 @@
 		2C422C412949D9A00015CE9D /* RegisterIdAndPasswordView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIdAndPasswordView.storyboard; sourceTree = "<group>"; };
 		2C694421298948ED00C268BE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C69442329894A0B00C268BE /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		2C6944252989ECA300C268BE /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		2CDEAA7728EFC4AD00464E30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2CDEAA7C28F59CB800464E30 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuController.swift; path = FlagBoard/Controller/SideMenu/SideMenuController.swift; sourceTree = SOURCE_ROOT; };
 		2CDEAA8128F59E2A00464E30 /* SideMenuView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuView.storyboard; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				2CFDE784297FAB28009695BA /* BaseInterceptor.swift */,
 				2CFDE786297FAC4F009695BA /* MyLogger.swift */,
 				2C694421298948ED00C268BE /* AuthService.swift */,
+				2C6944252989ECA300C268BE /* KeyChainManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */,
 				2CFDE785297FAB28009695BA /* BaseInterceptor.swift in Sources */,
 				2CDEAA7D28F59CB800464E30 /* SideMenuController.swift in Sources */,
+				2C6944262989ECA300C268BE /* KeyChainManager.swift in Sources */,
 				2C422C3429290D7B0015CE9D /* BulletinBoardCommentCell.swift in Sources */,
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
 				53FD972928F5FA63002F9190 /* BoardNavigationController.swift in Sources */,
