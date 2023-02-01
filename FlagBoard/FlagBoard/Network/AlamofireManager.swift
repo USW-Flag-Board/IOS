@@ -12,6 +12,7 @@ import Alamofire
 final class AlamofireManger {
     
     static let shared = AlamofireManger()
+    static let BASE_URL: String = "http://3.39.36.239:8080"
     
     let interceptors = Interceptor(interceptors: [
         BaseInterceptor()

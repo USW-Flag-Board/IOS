@@ -18,11 +18,11 @@ enum AuthRouter: URLRequestConvertible {
                       email: String, major: String, joinType: String)
     case signUp(email: String, certification: String)
     case login(id: String, password: String)
-    case tokenRefresh(accessToken: String, refreshToken: String)
+    case reissueToken(accessToken: String, refreshToken: String)
     
     
     var baseURL: URL {
-        return URL(string: API.BASE_URL)!
+        return URL(string: AlamofireManger.BASE_URL)!
     }
     
     
@@ -38,7 +38,7 @@ enum AuthRouter: URLRequestConvertible {
             return "/api/auth/sign-up"
         case .login:
             return "/api/auth/join"
-        case .tokenRefresh:
+        case .reissueToken:
             return "/api/auth/reissue"
         }
     }
@@ -56,7 +56,7 @@ enum AuthRouter: URLRequestConvertible {
             return .post
         case .login:
             return .post
-        case .tokenRefresh:
+        case .reissueToken:
             return .post
         }
     }
@@ -97,7 +97,7 @@ enum AuthRouter: URLRequestConvertible {
                 params["password"] = password
                 return params
                 
-            case let .tokenRefresh(accessToken, refreshToken):
+            case let .reissueToken(accessToken, refreshToken):
                 var params = Parameters()
                 params["accessToken"] = accessToken
                 params["refreshToken"] = refreshToken
