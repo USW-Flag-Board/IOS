@@ -6,8 +6,9 @@
 //
 
 import UIKit
+
 import Alamofire
-import SwiftyJSON
+import KeychainSwift
 
 class LoginController: UIViewController {
 
@@ -15,7 +16,10 @@ class LoginController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginStatusLabel: UILabel!
+    
+    
     //MARK: Properties
+    let keyChain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,7 @@ class LoginController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //MARK: Functions
+    //MARK: @IBAction Functions
     @IBAction func registerButtonPressed(_ sender: Any) {
         let registerIdAndPasswordStoryboard = UIStoryboard(name: "RegisterIdAndPasswordView", bundle: nil)
         guard let RegisterIdAndPasswordViewController = registerIdAndPasswordStoryboard.instantiateViewController(withIdentifier: "RegisterIdAndPasswordVC") as? RegisterIdAndPasswordController else { return }
@@ -37,6 +41,39 @@ class LoginController: UIViewController {
         
         login(id: id, password: password)
     }
+    
+    
+    //MARK: Functions
+    private func login(id: String, password: String) {
+        
+        AlamofireManager
+            .shared
+            .session
+            .request(AuthRouter.login(id: id, password: password))
+            .responseDecodable(of: TokenData.self) { response in
+                
+                guard let statusCode = response.response?.statusCode else { return }
+                
+                switch statusCode {
+                case 200:
+                    print("로그인 성공! JWT토큰 발급")
+                    
+                    // response refresh, access token data
+                    guard let refreshToken = response.value?.refreshToken else { return }
+                    guard let accessToken = response.value?.accessToken else { return }
+                    
+                    // keyChain Setting
+                    self.keyChain.set(refreshToken, forKey: "refresh_token")
+                    self.keyChain.set(accessToken, forKey: "access_token")
+                    
+                case 404:
+                    print("존재하지 않는 사용자입니다.")
+                default:
+                    print("other code ->", statusCode)
+                }
+            }
+    }
+        
     
     func moveToMainTap() {
         
@@ -59,45 +96,6 @@ class LoginController: UIViewController {
                 })
             })
         })
-    }
-    
-    private func login(id: String, password: String) {
-        
-        
-        
-//        var url = "http://3.39.36.239:8080" + "/api/auth/login"
-//        let parameter: Parameters = [
-//            "loginId": id,
-//            "password": password
-//        ]
-//
-//        AF.request(url,
-//                   method: .post,
-//                   parameters: parameter,
-//                   encoding: JSONEncoding.default).responseJSON { response in
-//
-//            if response.response?.statusCode == 200 {
-//                self.moveToMainTap()
-//            } else {
-//
-//                //또 틀리면 경고문 흔들기
-//                if self.loginStatusLabel.text != "" {
-//                    self.shakeLabel(label: self.loginStatusLabel)
-//                }
-//
-//                self.loginStatusLabel.text = "로그인 실패. 아이디와 비밀번호를 다시 입력해주세요."
-//                self.loginStatusLabel.textColor = UIColor.red
-//
-//
-//            }
-//
-//            print("----------------------")
-//            print("< login >")
-//            print(JSON(response.data) ?? "")
-//            print(response.response?.statusCode)
-//            print("----------------------")
-//        }
-            
     }
 
 

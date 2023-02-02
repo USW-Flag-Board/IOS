@@ -16,7 +16,7 @@ enum UserRouter: URLRequestConvertible {
     case getMyProfile
     
     var baseURL: URL {
-        return URL(string: AlamofireManger.BASE_URL)!
+        return URL(string: AlamofireManager.BASE_URL)!
     }
 
 

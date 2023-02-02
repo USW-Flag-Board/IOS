@@ -22,7 +22,7 @@ enum AuthRouter: URLRequestConvertible {
     
     
     var baseURL: URL {
-        return URL(string: AlamofireManger.BASE_URL)!
+        return URL(string: AlamofireManager.BASE_URL)!
     }
     
     
@@ -37,7 +37,7 @@ enum AuthRouter: URLRequestConvertible {
         case .signUp:
             return "/api/auth/sign-up"
         case .login:
-            return "/api/auth/join"
+            return "/api/auth/login"
         case .reissueToken:
             return "/api/auth/reissue"
         }
