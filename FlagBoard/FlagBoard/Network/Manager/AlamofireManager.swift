@@ -9,9 +9,9 @@ import Foundation
 
 import Alamofire
 
-final class AlamofireManger {
+final class AlamofireManager {
     
-    static let shared = AlamofireManger()
+    static let shared = AlamofireManager()
     static let BASE_URL: String = "http://3.39.36.239:8080"
     
     let interceptors = Interceptor(interceptors: [

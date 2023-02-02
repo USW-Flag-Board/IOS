@@ -85,7 +85,7 @@ class RegisterIdAndPasswordController: UIViewController {
     }
     
     func IdOverlap(id: String) {
-        AlamofireManger.shared.session.request(AuthRouter.checkId(id: id)).response { response in
+        AlamofireManager.shared.session.request(AuthRouter.checkId(id: id)).response { response in
             guard let statusCode = response.response?.statusCode else { return }
             
             switch statusCode {

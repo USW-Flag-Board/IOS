@@ -80,6 +80,7 @@ class LoginController: UIViewController {
     }
     
     private func login(id: String, password: String) {
+        
         var url = "http://3.39.36.239:8080" + "/api/auth/login"
         let parameter: Parameters = [
             "loginId": id,

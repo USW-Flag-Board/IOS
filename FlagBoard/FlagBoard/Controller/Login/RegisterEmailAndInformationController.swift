@@ -63,7 +63,7 @@ class RegisterEmailAndInformationController: UIViewController {
     // MARK: Functions
     private func emailOverlap(email: String) {
         
-        AlamofireManger
+        AlamofireManager
             .shared
             .session
             .request(AuthRouter.checkEmail(email: email)).response { response in
@@ -91,7 +91,7 @@ class RegisterEmailAndInformationController: UIViewController {
                                       major: String, joinType: String,
                                       email:String) {
         
-        AlamofireManger
+        AlamofireManager
             .shared
             .session
             .request(AuthRouter.sendAuthInfo(id: id!, password: password!, name: name,

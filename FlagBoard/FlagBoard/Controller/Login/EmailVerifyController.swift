@@ -35,7 +35,7 @@ class EmailVerifyController: UIViewController {
     // MARK: Functions
     private func signUp(email: String, certification: String) {
         
-        AlamofireManger
+        AlamofireManager
                     .shared
                     .session
                     .request(AuthRouter.signUp(email: email, certification: certification))
