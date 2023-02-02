@@ -16,16 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="profile screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wa-1m-Vmr">
-                                <rect key="frame" x="155" y="438" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-CN-Uoo">
+                                <rect key="frame" x="50" y="359" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6v-cd-S2v">
+                                <rect key="frame" x="50" y="403" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="회원탈퇴"/>
+                                <connections>
+                                    <action selector="withdrawalButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="j4G-LB-Jlv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Q0b-CN-Uoo" secondAttribute="trailing" constant="50" id="NhO-Gv-TqD"/>
+                            <constraint firstItem="H6v-cd-S2v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="T0D-lA-nrS"/>
+                            <constraint firstItem="Q0b-CN-Uoo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Tic-pF-7GJ"/>
+                            <constraint firstItem="Q0b-CN-Uoo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="271" id="aOA-0d-24W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="H6v-cd-S2v" secondAttribute="trailing" constant="50" id="gcm-QR-S1O"/>
+                            <constraint firstItem="H6v-cd-S2v" firstAttribute="top" secondItem="Q0b-CN-Uoo" secondAttribute="bottom" constant="10" id="jgU-XD-JaQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="프로필" id="uIe-rd-iOa">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="tPS-71-Yg0">
@@ -35,6 +49,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Q0b-CN-Uoo" id="FQP-PU-1eD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

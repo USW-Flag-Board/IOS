@@ -22,7 +22,8 @@ final class AlamofireManager {
     
     var session: Session
     
-    private init() {
+    init() {
+        print("AlamofireManager - init() called")
         session = Session(interceptor: interceptors, eventMonitors: monitors)
     }
 }
