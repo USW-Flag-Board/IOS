@@ -66,8 +66,17 @@ class LoginController: UIViewController {
                     self.keyChain.set(refreshToken, forKey: "refresh_token")
                     self.keyChain.set(accessToken, forKey: "access_token")
                     
+                    self.moveToMainTap()
+                    
                 case 404:
-                    print("존재하지 않는 사용자입니다.")
+                    // 또 틀리면 경고문 흔들기
+                    if self.loginStatusLabel.text != "" {
+                        self.shakeLabel(label: self.loginStatusLabel)
+                    }
+                    
+                    self.loginStatusLabel.text = "존재하지 않는 사용자입니다."
+                    self.loginStatusLabel.textColor = UIColor.red
+                    
                 default:
                     print("other code ->", statusCode)
                 }
