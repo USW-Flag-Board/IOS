@@ -158,6 +158,56 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2C568264298B8B7800789F31 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2CFDE77E297ED4AB009695BA /* AlamofireManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2C568265298B8B8C00789F31 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				2C56825B298B881500789F31 /* OAuthAuthenticator.swift */,
+				2C56825A298B881500789F31 /* OAuthCredential.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		2C568266298B8BA200789F31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2CFDE782297FAA53009695BA /* AuthRouter.swift */,
+				2C56825C298B881500789F31 /* UserRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		2C568267298B8BB600789F31 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				2CFDE786297FAC4F009695BA /* MyLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		2C568268298B8BC700789F31 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				2CFDE784297FAB28009695BA /* BaseInterceptor.swift */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		2C568269298B8BDB00789F31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2C568258298B880A00789F31 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2CDEAA7E28F59CC900464E30 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,14 +278,12 @@
 		2CE968E228EFB7D400E2D068 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2CFDE77E297ED4AB009695BA /* AlamofireManager.swift */,
-				2C56825B298B881500789F31 /* OAuthAuthenticator.swift */,
-				2C56825A298B881500789F31 /* OAuthCredential.swift */,
-				2C56825C298B881500789F31 /* UserRouter.swift */,
-				2C568258298B880A00789F31 /* AuthService.swift */,
-				2CFDE782297FAA53009695BA /* AuthRouter.swift */,
-				2CFDE784297FAB28009695BA /* BaseInterceptor.swift */,
-				2CFDE786297FAC4F009695BA /* MyLogger.swift */,
+				2C568269298B8BDB00789F31 /* Service */,
+				2C568268298B8BC700789F31 /* Interceptor */,
+				2C568267298B8BB600789F31 /* Logger */,
+				2C568266298B8BA200789F31 /* Router */,
+				2C568265298B8B8C00789F31 /* OAuth */,
+				2C568264298B8B7800789F31 /* Manager */,
 			);
 			path = Network;
 			sourceTree = "<group>";
