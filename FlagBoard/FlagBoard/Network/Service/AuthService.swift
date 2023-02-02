@@ -12,13 +12,12 @@ import Alamofire
 import KeychainSwift
 
 struct AuthService {
-    
-    let keyChain = KeychainSwift()
-    
-    func login(id: String, password: String) -> AnyPublisher<TokenData, AFError> {
+    static func login(id: String, password: String) -> AnyPublisher<TokenData, AFError> {
         print("AuthService - login() called")
+        
+        let keyChain = KeychainSwift()
 
-        return AlamofireManger.shared.session
+        return AlamofireManager.shared.session
             .request(AuthRouter.login(id: id, password: password))
             .publishDecodable(type: TokenData.self)
             .value()
