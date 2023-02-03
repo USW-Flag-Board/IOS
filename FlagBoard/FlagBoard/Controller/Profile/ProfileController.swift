@@ -28,8 +28,7 @@ class ProfileController: UIViewController {
         guard let refreshToken = keyChain.get("refresh_token") else { return }
         guard let accessToken = keyChain.get("access_token") else { return }
         
-        let credential = OAuthCredential(accessToken: accessToken, refreshToken: refreshToken,
-                                         expiration: Date(timeIntervalSinceNow: 60 * 60))
+        let credential = OAuthCredential(accessToken: accessToken, refreshToken: refreshToken)
         
         // Create the interceptor
         let authenticator = OAuthAuthenticator()

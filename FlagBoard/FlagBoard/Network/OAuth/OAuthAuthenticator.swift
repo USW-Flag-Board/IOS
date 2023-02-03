@@ -16,10 +16,9 @@ class OAuthAuthenticator: Authenticator {
 
     // 헤더에 인증 추가
     func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
-        urlRequest.headers.add(.authorization(bearerToken: credential.accessToken))
         print("OAuthAuthenticator - apply called")
-        // custom header example
-        // urlRequest.setValue(credential.accessToken, forHTTPHeaderField: "Authorization")
+        
+        urlRequest.headers.add(.authorization(bearerToken: credential.accessToken))
     }
 
     // token refresh
@@ -43,13 +42,9 @@ class OAuthAuthenticator: Authenticator {
                 self.keyChain.set(value.accessToken, forKey: "access_token")
                 self.keyChain.set(value.refreshToken, forKey: "refresh_token")
 
-                let expiration = Date(timeIntervalSinceNow:
-                                        TimeInterval(value.accessTokenExpiresIn))
-
                 // 새로운 Credential 생성
                 let newCredential = OAuthCredential(accessToken: value.accessToken,
-                                                    refreshToken: value.refreshToken,
-                                                    expiration: expiration)
+                                                    refreshToken: value.refreshToken)
 
                 completion(.success(newCredential))
 
