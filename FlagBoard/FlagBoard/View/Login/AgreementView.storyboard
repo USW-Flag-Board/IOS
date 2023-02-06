@@ -73,12 +73,13 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="allAgreeRadioButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h0x-OF-Bnz"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWB-Uk-Drg">
                                                 <rect key="frame" x="40" y="0.0" width="277" height="30"/>
@@ -195,6 +196,9 @@
                     <navigationItem key="navigationItem" id="X4U-b7-OFD"/>
                     <connections>
                         <outlet property="agreementButton" destination="4dh-h3-X1L" id="A19-QX-Mcw"/>
+                        <outlet property="allAgreeRadioButton" destination="14n-V9-Ajb" id="oeX-a8-j8R"/>
+                        <outlet property="firstRadioButton" destination="8ju-X8-pga" id="Nuo-mz-dF1"/>
+                        <outlet property="secondRadioButton" destination="1ew-sU-xZx" id="bjt-vs-45Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
