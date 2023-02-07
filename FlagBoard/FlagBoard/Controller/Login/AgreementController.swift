@@ -43,6 +43,9 @@ class AgreementController: UIViewController {
         }
     }
     
+    @IBAction func agreeButtonPressed(_ sender: UIButton) {
+        pushToNextVC()
+    }
     
     
     //MARK: Functions
@@ -75,6 +78,15 @@ class AgreementController: UIViewController {
             agreementButton.isEnabled = false
             agreementButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
         }
+    }
+    
+    func pushToNextVC() {
+        let joinTypeStoryboard = UIStoryboard(name: "JoinTypeView", bundle: nil)
+        guard let joinTypeViewController = joinTypeStoryboard
+            .instantiateViewController(withIdentifier: "JoinTypeVC")
+                as? JoinTypeController else { return }
+
+        self.navigationController?.pushViewController(joinTypeViewController, animated: true)
     }
     
         
