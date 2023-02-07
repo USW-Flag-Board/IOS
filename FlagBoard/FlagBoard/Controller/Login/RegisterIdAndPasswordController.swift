@@ -23,12 +23,15 @@ class RegisterIdAndPasswordController: UIViewController {
     
     //MARK: Properties
     var joinType: String?
+    var isIdValid: Bool = false
+    var isPasswordValid: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setButtonStyles()
+        setTextFieldOptions()
         setLabelOptions()
         setButtonOptions()
         
@@ -43,7 +46,19 @@ class RegisterIdAndPasswordController: UIViewController {
     
     // MARK: Functions
     func setButtonStyles() {
-        nextButton.layer.cornerRadius = 20
+        nextButton.setCornerRound()
+    }
+    
+    func setTextFieldOptions() {
+        idTextField.addTarget(self,
+                              action: #selector(checkIdTextField),
+                              for: .editingDidEnd)
+        passwordTextField.addTarget(self,
+                                    action: #selector(checkPasswordTextField),
+                                    for: .editingDidEnd)
+        reconfirmPasswordTextField.addTarget(self,
+                                             action: #selector(checkReconfirmPasswordTextField),
+                                             for: .editingDidEnd)
     }
     
     func setLabelOptions() {
@@ -56,39 +71,64 @@ class RegisterIdAndPasswordController: UIViewController {
         nextButton.setButtonEnable(to: false)
     }
     
-    func idCheck(id: String?) -> Bool { // id 체크를 관장하는 함수
-        guard let userId = id else { return false }
-        
-        switch userId {
-        case let id where id.isEmpty:
-            print("아이디가 비어있음")
-            return false
-        case let id where !RegisterModel.isValidId(id: id):
-            print("아이디의 형식이 이상함")
-            return false
-        default:
-            return true
-        }
-    }
-    
-    
-    // password 체크를 관장하는 함수
-    func passwordCheck(firstPassword: String?, secondPassword: String?) -> Bool {
-        return true
-    }
-    
     func IdOverlap(id: String) {
         
     }
     
     func pushToNextVC(id: String, password: String) {
         // 다음 화면으로 전환
-        let registerEmailAndInformationStoryboard = UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
-        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard.instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC") as? RegisterEmailAndInformationController else { return }
+        let registerEmailAndInformationStoryboard =
+        UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
+        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard
+            .instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC")
+                as? RegisterEmailAndInformationController else { return }
 
         registerEmailAndInformationViewController.id = id
         registerEmailAndInformationViewController.password = password
 
-        self.navigationController?.pushViewController(registerEmailAndInformationViewController, animated: true)
+        self.navigationController?.pushViewController(registerEmailAndInformationViewController,
+                                                      animated: true)
+    }
+    
+    // MARK: @objc Functions
+    @objc func checkIdTextField(_ sender: UITextField){
+        guard let id = idTextField.text else { return }
+        
+        switch id {
+        case let id where id.isEmpty:
+            idNoticeLabel.text = "아이디를 입력해주세요!"
+        case let id where !RegisterModel.isValidId(id: id):
+            idNoticeLabel.text = "아이디의 형식이 이상합니다"
+        default:
+            idNoticeLabel.text = "사용가능한 아이디입니다."
+        }
+    }
+    
+    @objc func checkPasswordTextField(_ sender: UITextField){
+        guard let password = passwordTextField.text else { return }
+        
+        switch password {
+        case let password where password.isEmpty:
+            passwordNoticeLabel.text = "비밀번호를 입력해주세요!"
+        case let password where !RegisterModel.isValidPassword(password: password):
+            passwordNoticeLabel.text = "비밀번호의 형식이 이상합니다"
+        default:
+            passwordNoticeLabel.text = "사용가능한 비밀번호입니다."
+        }
+    }
+    
+    @objc func checkReconfirmPasswordTextField(_ sender: UITextField){
+        guard let password = passwordTextField.text else { return }
+        guard let reconfirmPassword = reconfirmPasswordTextField.text else { return }
+        
+        switch reconfirmPassword {
+        case let reconfirmPassword where reconfirmPassword.isEmpty:
+            reconfirmPasswordNoticeLabel.text = "비밀번호 재확인을 입력해주세요!"
+        case let reconfirmPassword where !RegisterModel.confirmPassword(first: password,
+                                                                        second: reconfirmPassword):
+            reconfirmPasswordNoticeLabel.text = "비밀번호 재확인을 입력해주세요!"
+        default:
+            reconfirmPasswordNoticeLabel.text = "비밀번호가 일치합니다!"
+        }
     }
 }
