@@ -126,7 +126,7 @@ class RegisterIdAndPasswordController: UIViewController {
             reconfirmPasswordNoticeLabel.text = "비밀번호 재확인을 입력해주세요!"
         case let reconfirmPassword where !RegisterModel.confirmPassword(first: password,
                                                                         second: reconfirmPassword):
-            reconfirmPasswordNoticeLabel.text = "비밀번호 재확인을 입력해주세요!"
+            reconfirmPasswordNoticeLabel.text = "비밀번호가 일치하지 않습니다!"
         default:
             reconfirmPasswordNoticeLabel.text = "비밀번호가 일치합니다!"
         }
