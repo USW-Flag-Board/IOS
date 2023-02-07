@@ -44,7 +44,12 @@ class AgreementController: UIViewController {
     }
     
     @IBAction func agreeButtonPressed(_ sender: UIButton) {
-        pushToNextVC()
+        let joinTypeStoryboard = UIStoryboard(name: "JoinTypeView", bundle: nil)
+        guard let joinTypeViewController = joinTypeStoryboard
+            .instantiateViewController(withIdentifier: "JoinTypeVC")
+                as? JoinTypeController else { return }
+
+        self.navigationController?.pushViewController(joinTypeViewController, animated: true)
     }
     
     
@@ -60,8 +65,12 @@ class AgreementController: UIViewController {
         firstRadioButton.isMultipleSelectionEnabled = true
         secondRadioButton.isMultipleSelectionEnabled = true
         
-        firstRadioButton.addTarget(self, action: #selector(anyRadioButtonPressed), for: .touchUpInside)
-        secondRadioButton.addTarget(self, action: #selector(anyRadioButtonPressed), for: .touchUpInside)
+        firstRadioButton.addTarget(self,
+                                   action: #selector(anyRadioButtonPressed),
+                                   for: .touchUpInside)
+        secondRadioButton.addTarget(self,
+                                    action: #selector(anyRadioButtonPressed),
+                                    for: .touchUpInside)
     }
     
     func changeRadioStatus(_ sender: DLRadioButton, to: Bool) {
@@ -78,15 +87,6 @@ class AgreementController: UIViewController {
             agreementButton.isEnabled = false
             agreementButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
         }
-    }
-    
-    func pushToNextVC() {
-        let joinTypeStoryboard = UIStoryboard(name: "JoinTypeView", bundle: nil)
-        guard let joinTypeViewController = joinTypeStoryboard
-            .instantiateViewController(withIdentifier: "JoinTypeVC")
-                as? JoinTypeController else { return }
-
-        self.navigationController?.pushViewController(joinTypeViewController, animated: true)
     }
     
         

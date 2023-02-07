@@ -12,12 +12,18 @@ import Alamofire
 
 class RegisterIdAndPasswordController: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var reconfirmPassword: UITextField!
+    @IBOutlet weak var idNoticeLabel: UILabel!
+    @IBOutlet weak var passwordNoticeLabel: UILabel!
+    @IBOutlet weak var confirmPasswordNoticeLabel: UILabel!
     
+    //MARK: Properties
     var id: String = ""
     var password: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
