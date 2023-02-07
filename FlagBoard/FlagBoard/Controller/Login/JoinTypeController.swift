@@ -33,6 +33,8 @@ class JoinTypeController: UIViewController {
         guard let registerIdAndPasswordViewController = registerIdAndPasswordStoryboard
             .instantiateViewController(withIdentifier: "RegisterIdAndPasswordVC")
                 as? RegisterIdAndPasswordController else { return }
+        
+        registerIdAndPasswordViewController.joinType = joinType
 
         self.navigationController?.pushViewController(registerIdAndPasswordViewController,
                                                       animated: true)
@@ -41,7 +43,7 @@ class JoinTypeController: UIViewController {
     
     //MARK: Functions
     func setButtonStyles() {
-        self.nextButton.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius = 20
     }
 
     func setButtonOptions() {

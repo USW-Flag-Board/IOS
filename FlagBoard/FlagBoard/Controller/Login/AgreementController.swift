@@ -55,7 +55,7 @@ class AgreementController: UIViewController {
     
     //MARK: Functions
     func setButtonStyles() {
-        self.agreementButton.layer.cornerRadius = 20
+        agreementButton.layer.cornerRadius = 20
     }
     
     func setButtonOptions() {

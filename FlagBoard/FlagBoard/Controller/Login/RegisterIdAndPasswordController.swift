@@ -15,41 +15,57 @@ class RegisterIdAndPasswordController: UIViewController {
     //MARK: IBOutlets
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var reconfirmPassword: UITextField!
+    @IBOutlet weak var reconfirmPasswordTextField: UITextField!
     @IBOutlet weak var idNoticeLabel: UILabel!
     @IBOutlet weak var passwordNoticeLabel: UILabel!
-    @IBOutlet weak var confirmPasswordNoticeLabel: UILabel!
+    @IBOutlet weak var reconfirmPasswordNoticeLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     //MARK: Properties
-    var id: String = ""
-    var password: String = ""
+    var joinType: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setButtonStyles()
+        setLabelOptions()
+        setButtonOptions()
         
     }
     
 
     // MARK: @IBAction Functions
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        guard let id = idTextField.text, idCheck(id: id) else { return }
-        guard let password = passwordTextField.text,
-              passwordCheck(firstPassword: password,
-                            secondPassword: reconfirmPassword.text) else { return }
-    
-        // 전역 변수에 넣기
-        self.id = id
-        self.password = password
-        
-        // 위 조건들을 통과할 경우 id 확인
-        IdOverlap(id: self.id)
+
     }
     
     
     // MARK: Functions
+    func setButtonStyles() {
+        nextButton.layer.cornerRadius = 20
+    }
+    func setLabelOptions() {
+        idNoticeLabel.text = ""
+        passwordNoticeLabel.text = ""
+        reconfirmPasswordNoticeLabel.text = ""
+    }
+    
+    func setButtonOptions() {
+        changeButtonEnable(to: false)
+    }
+    
+    func changeButtonEnable(to: Bool) {
+        if to {
+            nextButton.isEnabled = true
+            nextButton.backgroundColor = #colorLiteral(red: 0.2156939507, green: 0.5384917259, blue: 0.4589682817, alpha: 1)
+        } else {
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
+        }
+    }
+    
+    
     func idCheck(id: String?) -> Bool { // id 체크를 관장하는 함수
         guard let userId = id else { return false }
         
@@ -68,42 +84,11 @@ class RegisterIdAndPasswordController: UIViewController {
     
     // password 체크를 관장하는 함수
     func passwordCheck(firstPassword: String?, secondPassword: String?) -> Bool {
-        guard let userFirstPassword = firstPassword else { return false }
-        guard let userSecondPassword = secondPassword else { return false }
-        
-        switch (userFirstPassword, userSecondPassword) {
-        case let (firstPassword, _) where firstPassword.isEmpty:
-            print("첫번째 비밀번호가 비어있음")
-            return false
-        case let (_, secondPassword) where secondPassword.isEmpty:
-            print("두번째 비밀번호가 비어있음")
-            return false
-        case let (firstPassword, _) where !RegisterModel.isValidPassword(password: firstPassword):
-            print("비밀번호 자릿수가 이상함")
-            return false
-        case let (firstPassword, secondPassword)
-            where !RegisterModel.confirmPassword(first: firstPassword, second: secondPassword):
-            print("비밀번호가 일치하지 않음")
-            return false
-        default:
-            return true
-        }
+        return true
     }
     
     func IdOverlap(id: String) {
-        AlamofireManager.shared.session.request(AuthRouter.checkId(id: id)).response { response in
-            guard let statusCode = response.response?.statusCode else { return }
-            
-            switch statusCode {
-            case 200:
-                print("사용 가능한 아이디입니다.")
-                self.pushToNextVC(id: self.id, password: self.password)
-            case 409:
-                print("이미 사용 중인 아이디입니다.")
-            default:
-                print("other code ->", statusCode)
-            }
-        }
+        
     }
     
     func pushToNextVC(id: String, password: String) {
