@@ -35,7 +35,7 @@
 		2CE85A1D28EA80FA00EC6016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85A1C28EA80FA00EC6016 /* AppDelegate.swift */; };
 		2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE85A1E28EA80FA00EC6016 /* SceneDelegate.swift */; };
 		2CE85A2628EA80FB00EC6016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE85A2528EA80FB00EC6016 /* Assets.xcassets */; };
-		2CE968E528EFB88000E2D068 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968E428EFB88000E2D068 /* extension.swift */; };
+		2CE968E528EFB88000E2D068 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968E428EFB88000E2D068 /* ButtonExtension.swift */; };
 		2CE968ED28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968EC28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift */; };
 		2CE968EF28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE968EE28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard */; };
 		2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE968F028EFB9E100E2D068 /* BulletinBoardSelectionController.swift */; };
@@ -91,7 +91,7 @@
 		2CE85A1E28EA80FA00EC6016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CE85A2528EA80FB00EC6016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE85A2A28EA80FB00EC6016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CE968E428EFB88000E2D068 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		2CE968E428EFB88000E2D068 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		2CE968EC28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoardSelectionModel.swift; sourceTree = "<group>"; };
 		2CE968EE28EFB9D300E2D068 /* BulletinBoardSelectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BulletinBoardSelectionView.storyboard; sourceTree = "<group>"; };
 		2CE968F028EFB9E100E2D068 /* BulletinBoardSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoardSelectionController.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		2CE968E328EFB7F600E2D068 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2CE968E428EFB88000E2D068 /* extension.swift */,
+				2CE968E428EFB88000E2D068 /* ButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 				2CE968F128EFB9E100E2D068 /* BulletinBoardSelectionController.swift in Sources */,
 				2CFDE774297912A8009695BA /* RegisterEmailAndInformationController.swift in Sources */,
 				2C422C2F292885D60015CE9D /* BulletinBoardDetailController.swift in Sources */,
-				2CE968E528EFB88000E2D068 /* extension.swift in Sources */,
+				2CE968E528EFB88000E2D068 /* ButtonExtension.swift in Sources */,
 				2C56825E298B881500789F31 /* OAuthAuthenticator.swift in Sources */,
 				53733250290C8B3100D6DE25 /* FreeBoardViewController.swift in Sources */,
 				2C422C312929035C0015CE9D /* BulletinBoardDetailModel.swift in Sources */,

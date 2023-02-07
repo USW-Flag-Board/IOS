@@ -45,6 +45,7 @@ class RegisterIdAndPasswordController: UIViewController {
     func setButtonStyles() {
         nextButton.layer.cornerRadius = 20
     }
+    
     func setLabelOptions() {
         idNoticeLabel.text = ""
         passwordNoticeLabel.text = ""
@@ -52,19 +53,8 @@ class RegisterIdAndPasswordController: UIViewController {
     }
     
     func setButtonOptions() {
-        changeButtonEnable(to: false)
+        nextButton.setButtonEnable(to: false)
     }
-    
-    func changeButtonEnable(to: Bool) {
-        if to {
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = #colorLiteral(red: 0.2156939507, green: 0.5384917259, blue: 0.4589682817, alpha: 1)
-        } else {
-            nextButton.isEnabled = false
-            nextButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
-        }
-    }
-    
     
     func idCheck(id: String?) -> Bool { // id 체크를 관장하는 함수
         guard let userId = id else { return false }

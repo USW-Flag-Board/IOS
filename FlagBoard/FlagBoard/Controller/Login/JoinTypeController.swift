@@ -43,11 +43,11 @@ class JoinTypeController: UIViewController {
     
     //MARK: Functions
     func setButtonStyles() {
-        nextButton.layer.cornerRadius = 20
+        nextButton.setCornerRound()
     }
 
     func setButtonOptions() {
-        changeButtonEnable(to: false)
+        nextButton.setButtonEnable(to: false)
         
         normalMemberRadioButton.addTarget(self,
                                           action: #selector(anyRadioButtonPressed),
@@ -57,19 +57,10 @@ class JoinTypeController: UIViewController {
                                         for: .touchUpInside)
     }
     
-    func changeButtonEnable(to: Bool) {
-        if to {
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = #colorLiteral(red: 0.2156939507, green: 0.5384917259, blue: 0.4589682817, alpha: 1)
-        } else {
-            nextButton.isEnabled = false
-            nextButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
-        }
-    }
     
     //MARK: @objc Functions
     @objc func anyRadioButtonPressed(_ sender: DLRadioButton) {
-        changeButtonEnable(to: true)
+        nextButton.setButtonEnable(to: true)
         
         if sender.titleLabel?.text == "일반회원" {
             joinType = "일반"

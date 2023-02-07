@@ -34,12 +34,12 @@ class AgreementController: UIViewController {
         if allAgreeRadioButton.isSelected {
             changeRadioStatus(firstRadioButton, to: true)
             changeRadioStatus(secondRadioButton, to: true)
-            changeButtonEnable(to: true)
+            agreementButton.setButtonEnable(to: true)
            
         } else {
             changeRadioStatus(firstRadioButton, to: false)
             changeRadioStatus(secondRadioButton, to: false)
-            changeButtonEnable(to: false)
+            agreementButton.setButtonEnable(to: false)
         }
     }
     
@@ -55,11 +55,11 @@ class AgreementController: UIViewController {
     
     //MARK: Functions
     func setButtonStyles() {
-        agreementButton.layer.cornerRadius = 20
+        agreementButton.setCornerRound()
     }
     
     func setButtonOptions() {
-        changeButtonEnable(to: false)
+        agreementButton.setButtonEnable(to: false)
     
         allAgreeRadioButton.isMultipleSelectionEnabled = true
         firstRadioButton.isMultipleSelectionEnabled = true
@@ -79,26 +79,16 @@ class AgreementController: UIViewController {
         }
     }
     
-    func changeButtonEnable(to: Bool) {
-        if to {
-            agreementButton.isEnabled = true
-            agreementButton.backgroundColor = #colorLiteral(red: 0.2156939507, green: 0.5384917259, blue: 0.4589682817, alpha: 1)
-        } else {
-            agreementButton.isEnabled = false
-            agreementButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.5568627715, blue: 0.5568627119, alpha: 1)
-        }
-    }
-    
         
     //MARK: @objc Functions
     @objc func anyRadioButtonPressed() {
         if firstRadioButton.isSelected || secondRadioButton.isSelected {
             changeRadioStatus(allAgreeRadioButton, to: false)
-            changeButtonEnable(to: false)
+            agreementButton.setButtonEnable(to: false)
         }
         if firstRadioButton.isSelected && secondRadioButton.isSelected {
             changeRadioStatus(allAgreeRadioButton, to: true)
-            changeButtonEnable(to: true)
+            agreementButton.setButtonEnable(to: true)
         }
     }
 }
