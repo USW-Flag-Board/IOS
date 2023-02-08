@@ -13,12 +13,22 @@ class EmailVerifyController: UIViewController {
 
     @IBOutlet weak var authNumTextField: UITextField!
     
+    var id: String?
+    var password: String?
+    var joinType: String?
+    var name: String?
+    var nickName: String?
+    var major: String?
+    var studentId: String?
+    var phoneNumber: String?
+    
     var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(id, password, joinType, name, nickName, major, studentId, phoneNumber)
     }
     
     // MARK: @IBAction Functions
