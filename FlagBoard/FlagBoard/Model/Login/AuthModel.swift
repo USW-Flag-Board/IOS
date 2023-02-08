@@ -7,10 +7,18 @@
 
 import Foundation
 
-// MARK: - Token Data
-struct TokenData: Codable {
-    let accessToken: String
-    let accessTokenExpiresIn: Int
-    let grantType: String
-    let refreshToken: String
+struct AuthModel {
+    
+    // MARK: - Token Data
+    struct TokenData: Codable {
+        let accessToken: String
+        let accessTokenExpiresIn: Int
+        let grantType: String
+        let refreshToken: String
+    }
+
+    
 }
+
+
+

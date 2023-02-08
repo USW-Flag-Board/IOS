@@ -50,7 +50,7 @@ class LoginController: UIViewController {
             .shared
             .session
             .request(AuthRouter.login(id: id, password: password))
-            .responseDecodable(of: TokenData.self) { response in
+            .responseDecodable(of: AuthModel.TokenData.self) { response in
                 
                 guard let statusCode = response.response?.statusCode else { return }
                 

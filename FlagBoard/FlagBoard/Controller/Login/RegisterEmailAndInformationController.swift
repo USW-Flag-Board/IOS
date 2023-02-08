@@ -178,7 +178,7 @@ extension RegisterEmailAndInformationController: UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Majors.data.count
+        return RegisterModel.Majors.data.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -186,11 +186,11 @@ extension RegisterEmailAndInformationController: UIPickerViewDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Majors.data[row]
+        return RegisterModel.Majors.data[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.majorTextField.text = "\(Majors.data[row])"
+        self.majorTextField.text = "\(RegisterModel.Majors.data[row])"
     }
     
 }

@@ -33,8 +33,8 @@ class OAuthAuthenticator: Authenticator {
 
         let request = session.request(AuthRouter.reissueToken(accessToken: accessToken,
                                                               refreshToken: refreshToken))
-
-        request.responseDecodable(of: TokenData.self) { [self] result in
+    
+        request.responseDecodable(of: AuthModel.TokenData.self) { [self] result in
             switch result.result {
             case .success(let value):
 
