@@ -43,7 +43,11 @@ class RegisterIdAndPasswordController: UIViewController {
 
     // MARK: @IBAction Functions
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        pushToNextVC(id: self.id, password: self.password)
+        
+        if let joinType = self.joinType {
+            pushToNextVC(id: self.id, password: self.password, joinType: joinType)
+        }
+        
     }
     
     
@@ -105,7 +109,6 @@ class RegisterIdAndPasswordController: UIViewController {
     }
     
     func allAvailableCheck() {
-        print(isIdValid, isPasswordValid, isReconfirmPasswordValid)
         // 모두 다 유효하면 next 버튼 활성화
         if isIdValid && isPasswordValid && isReconfirmPasswordValid {
             nextButton.setButtonEnable(to: true)
@@ -114,17 +117,18 @@ class RegisterIdAndPasswordController: UIViewController {
         }
     }
     
-    func pushToNextVC(id: String, password: String) {
-        let registerEmailAndInformationStoryboard =
-        UIStoryboard(name: "RegisterEmailAndInformationView", bundle: nil)
-        guard let registerEmailAndInformationViewController = registerEmailAndInformationStoryboard
-            .instantiateViewController(withIdentifier: "RegisterEmailAndInformationVC")
-                as? RegisterEmailAndInformationController else { return }
+    func pushToNextVC(id: String, password: String, joinType: String) {
+        let registerInformationStoryboard =
+        UIStoryboard(name: "RegisterInformationView", bundle: nil)
+        guard let registerInformationViewController = registerInformationStoryboard
+            .instantiateViewController(withIdentifier: "RegisterInformationVC")
+                as? RegisterInformationController else { return }
+        
+        registerInformationViewController.joinType = joinType
+        registerInformationViewController.id = id
+        registerInformationViewController.password = password
 
-        registerEmailAndInformationViewController.id = id
-        registerEmailAndInformationViewController.password = password
-
-        self.navigationController?.pushViewController(registerEmailAndInformationViewController,
+        self.navigationController?.pushViewController(registerInformationViewController,
                                                       animated: true)
     }
     
