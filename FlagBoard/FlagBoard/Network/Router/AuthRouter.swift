@@ -29,17 +29,17 @@ enum AuthRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .checkId:
-            return "/api/auth/check/id"
+            return "/auth/check/id"
         case .checkEmail:
-            return "/api/auth/check/email"
+            return "/auth/check/email"
         case .sendAuthInfo:
-            return "/api/auth/join"
+            return "/auth/join"
         case .signUp:
-            return "/api/auth/sign-up"
+            return "/auth/sign-up"
         case .login:
-            return "/api/auth/login"
+            return "/auth/login"
         case .reissueToken:
-            return "/api/auth/reissue"
+            return "/auth/reissue"
         }
     }
     

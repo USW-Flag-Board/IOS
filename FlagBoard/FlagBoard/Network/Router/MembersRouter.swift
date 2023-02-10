@@ -23,7 +23,7 @@ enum MembersRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .withdrawal:
-            return "/api/members"
+            return "/members"
         }
     }
 

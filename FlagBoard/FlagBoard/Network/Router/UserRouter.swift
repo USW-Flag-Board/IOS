@@ -23,7 +23,7 @@ enum UserRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .getMyProfile:
-            return "/api/auth/check/id"
+            return "/auth/check/id"
         }
     }
 
