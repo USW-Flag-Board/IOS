@@ -11,6 +11,7 @@ import Alamofire
 
 class EmailVerifyController: UIViewController {
 
+    @IBOutlet weak var emailIdTextField: UITextField!
     @IBOutlet weak var authNumTextField: UITextField!
     
     var id: String?
@@ -27,7 +28,7 @@ class EmailVerifyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setStyles()
         print(id, password, joinType, name, nickName, major, studentId, phoneNumber)
     }
     
@@ -43,6 +44,14 @@ class EmailVerifyController: UIViewController {
     }
     
     // MARK: Functions
+    func setStyles() {
+        let addressLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+        
+        addressLabel.text = "@suwon.ac.kr"
+        emailIdTextField.rightView = addressLabel
+        emailIdTextField.rightViewMode = .always
+    }
+    
     private func signUp(email: String, certification: String) {
         
         AlamofireManager
