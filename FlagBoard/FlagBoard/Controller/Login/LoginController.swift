@@ -63,7 +63,7 @@ class LoginController: UIViewController {
             .shared
             .session
             .request(AuthRouter.login(id: id, password: password))
-            .responseDecodable(of: AuthModel.TokenData.self) { response in
+            .responseDecodable(of: TokenData.self) { response in
                 
                 guard let statusCode = response.response?.statusCode else { return }
                 
@@ -72,8 +72,8 @@ class LoginController: UIViewController {
                     print("로그인 성공! JWT토큰 발급")
                     
                     // response refresh, access token data
-                    guard let refreshToken = response.value?.refreshToken else { return }
-                    guard let accessToken = response.value?.accessToken else { return }
+                    guard let refreshToken = response.value?.payload.refreshToken else { return }
+                    guard let accessToken = response.value?.payload.accessToken else { return }
                     
                     // keyChain Setting
                     self.keyChain.set(refreshToken, forKey: "refresh_token")
@@ -100,7 +100,7 @@ class LoginController: UIViewController {
     func moveToMainTap() {
         
         let mainViewStoryboard = UIStoryboard(name: "MainView", bundle: nil)
-        guard mainViewStoryboard.instantiateViewController(withIdentifier: "mainTabView") is TabBarController else { return }
+        guard mainViewStoryboard.instantiateViewController(withIdentifier: "MainTabVC") is TabBarController else { return }
         
         self.navigationController?.popViewController(animated: true)
         

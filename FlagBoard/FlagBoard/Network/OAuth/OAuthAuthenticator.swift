@@ -34,17 +34,17 @@ class OAuthAuthenticator: Authenticator {
         let request = session.request(AuthRouter.reissueToken(accessToken: accessToken,
                                                               refreshToken: refreshToken))
     
-        request.responseDecodable(of: AuthModel.TokenData.self) { [self] result in
+        request.responseDecodable(of: TokenData.self) { [self] result in
             switch result.result {
             case .success(let value):
 
                 // 재발행 받은 토큰 키체인에 저장
-                self.keyChain.set(value.accessToken, forKey: "access_token")
-                self.keyChain.set(value.refreshToken, forKey: "refresh_token")
+                self.keyChain.set(value.payload.accessToken, forKey: "access_token")
+                self.keyChain.set(value.payload.refreshToken, forKey: "refresh_token")
 
                 // 새로운 Credential 생성
-                let newCredential = OAuthCredential(accessToken: value.accessToken,
-                                                    refreshToken: value.refreshToken)
+                let newCredential = OAuthCredential(accessToken: value.payload.accessToken,
+                                                    refreshToken: value.payload.refreshToken)
 
                 completion(.success(newCredential))
 

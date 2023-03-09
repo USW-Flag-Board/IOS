@@ -40,7 +40,7 @@ enum MembersRouter: URLRequestConvertible {
             switch self {
             case let .withdrawal(password):
                 var params = Parameters()
-                params["password"] = password
+                params["currentPassword"] = password
                 return params
           }
         }
