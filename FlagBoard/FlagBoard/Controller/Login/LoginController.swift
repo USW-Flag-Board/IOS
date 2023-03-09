@@ -16,6 +16,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginStatusLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     
     //MARK: Properties
@@ -24,7 +25,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setStyles()
     }
     
     //MARK: @IBAction Functions
@@ -46,6 +47,16 @@ class LoginController: UIViewController {
     
     
     //MARK: Functions
+    func setStyles() {
+        loginButton.setCornerRound()
+        idTextField.setLoginStyle(placeholder: "아이디")
+        passwordTextField.setLoginStyle(placeholder: "비밀번호")
+    }
+    
+    func setOptions() {
+        
+    }
+    
     private func login(id: String, password: String) {
         
         AlamofireManager
