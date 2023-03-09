@@ -15,17 +15,6 @@ struct AuthModel {
         let payload: Bool
         let status: String
     }
-    
-    
-    // MARK: - token data
-    struct TokenData: Codable {
-        let accessToken: String
-        let accessTokenExpiresIn: Int
-        let grantType: String
-        let refreshToken: String
-    }
-
-    
 }
 
 

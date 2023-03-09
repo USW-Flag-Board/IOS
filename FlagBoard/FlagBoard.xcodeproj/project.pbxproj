@@ -14,7 +14,7 @@
 		2C422C3529290D7B0015CE9D /* BulletinBoardCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C422C3329290D7B0015CE9D /* BulletinBoardCommentCell.xib */; };
 		2C422C3A293AE2820015CE9D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C39293AE2820015CE9D /* LoginController.swift */; };
 		2C422C3C293AE2FC0015CE9D /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C422C3B293AE2FC0015CE9D /* LoginView.storyboard */; };
-		2C422C3E293AE3130015CE9D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C3D293AE3130015CE9D /* LoginModel.swift */; };
+		2C422C3E293AE3130015CE9D /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C3D293AE3130015CE9D /* TokenModel.swift */; };
 		2C422C402949D9850015CE9D /* RegisterIdAndPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C422C3F2949D9850015CE9D /* RegisterIdAndPasswordController.swift */; };
 		2C422C422949D9A00015CE9D /* AgreementView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C422C412949D9A00015CE9D /* AgreementView.storyboard */; };
 		2C56825D298B881500789F31 /* OAuthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56825A298B881500789F31 /* OAuthCredential.swift */; };
@@ -71,7 +71,7 @@
 		2C422C3329290D7B0015CE9D /* BulletinBoardCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BulletinBoardCommentCell.xib; sourceTree = "<group>"; };
 		2C422C39293AE2820015CE9D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2C422C3B293AE2FC0015CE9D /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
-		2C422C3D293AE3130015CE9D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		2C422C3D293AE3130015CE9D /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		2C422C3F2949D9850015CE9D /* RegisterIdAndPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIdAndPasswordController.swift; sourceTree = "<group>"; };
 		2C422C412949D9A00015CE9D /* AgreementView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreementView.storyboard; sourceTree = "<group>"; };
 		2C56825A298B881500789F31 /* OAuthCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthCredential.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		2C422C38293AE2370015CE9D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2C422C3D293AE3130015CE9D /* LoginModel.swift */,
+				2C422C3D293AE3130015CE9D /* TokenModel.swift */,
 				2CFDE77C297A637C009695BA /* RegisterModel.swift */,
 				2C568260298B884C00789F31 /* AuthModel.swift */,
 			);
@@ -554,7 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE968FD28EFBBD000E2D068 /* ProfileModel.swift in Sources */,
-				2C422C3E293AE3130015CE9D /* LoginModel.swift in Sources */,
+				2C422C3E293AE3130015CE9D /* TokenModel.swift in Sources */,
 				2C56826B298BB8DC00789F31 /* MembersRouter.swift in Sources */,
 				2C422C402949D9850015CE9D /* RegisterIdAndPasswordController.swift in Sources */,
 				2CE968ED28EFB9BB00E2D068 /* BulletinBoardSelectionModel.swift in Sources */,
