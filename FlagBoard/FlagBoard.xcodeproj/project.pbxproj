@@ -23,6 +23,7 @@
 		2C568261298B884C00789F31 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C568260298B884C00789F31 /* AuthModel.swift */; };
 		2C56826B298BB8DC00789F31 /* MembersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56826A298BB8DC00789F31 /* MembersRouter.swift */; };
 		2C56826D2990E03400789F31 /* AgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56826C2990E03400789F31 /* AgreementController.swift */; };
+		2CB9582929B9B2EF00B619EA /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9582829B9B2EF00B619EA /* TextFieldExtension.swift */; };
 		2CC1591729911F4800A59184 /* RegisterIdAndPasswordView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC1591629911F4800A59184 /* RegisterIdAndPasswordView.storyboard */; };
 		2CC15919299230BE00A59184 /* JoinTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC15918299230BE00A59184 /* JoinTypeController.swift */; };
 		2CC1591B299230CC00A59184 /* JoinTypeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC1591A299230CC00A59184 /* JoinTypeView.storyboard */; };
@@ -79,6 +80,7 @@
 		2C568260298B884C00789F31 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		2C56826A298BB8DC00789F31 /* MembersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRouter.swift; sourceTree = "<group>"; };
 		2C56826C2990E03400789F31 /* AgreementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementController.swift; sourceTree = "<group>"; };
+		2CB9582829B9B2EF00B619EA /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		2CC1591629911F4800A59184 /* RegisterIdAndPasswordView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIdAndPasswordView.storyboard; sourceTree = "<group>"; };
 		2CC15918299230BE00A59184 /* JoinTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTypeController.swift; sourceTree = "<group>"; };
 		2CC1591A299230CC00A59184 /* JoinTypeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinTypeView.storyboard; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE968E428EFB88000E2D068 /* ButtonExtension.swift */,
+				2CB9582829B9B2EF00B619EA /* TextFieldExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				2CDEAA7828EFC4AD00464E30 /* TabBarController.swift in Sources */,
 				2CFDE785297FAB28009695BA /* BaseInterceptor.swift in Sources */,
 				2CDEAA7D28F59CB800464E30 /* SideMenuController.swift in Sources */,
+				2CB9582929B9B2EF00B619EA /* TextFieldExtension.swift in Sources */,
 				2C422C3429290D7B0015CE9D /* BulletinBoardCommentCell.swift in Sources */,
 				2CE85A1F28EA80FA00EC6016 /* SceneDelegate.swift in Sources */,
 				53FD972928F5FA63002F9190 /* BoardNavigationController.swift in Sources */,
