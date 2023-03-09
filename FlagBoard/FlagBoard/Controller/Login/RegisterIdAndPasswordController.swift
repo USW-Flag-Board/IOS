@@ -29,7 +29,6 @@ class RegisterIdAndPasswordController: UIViewController {
     
     private var id: String = ""
     private var password: String = ""
-
     
     
     override func viewDidLoad() {

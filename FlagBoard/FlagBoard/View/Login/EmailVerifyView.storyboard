@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6S1-GA-hMU">
-                                <rect key="frame" x="57" y="64" width="300" height="128.5"/>
+                                <rect key="frame" x="57" y="64" width="300" height="160.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수원대학교 이메일 인증" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtU-TU-WjD">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="25.5"/>
@@ -28,34 +28,54 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-pM-0Pe">
-                                        <rect key="frame" x="0.0" y="40.5" width="300" height="88"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="300" height="52.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-wS-Ywa">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TRA-1j-fTZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="52.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0u-dI-i52">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYD-CQ-iUc">
-                                                        <rect key="frame" x="250" y="0.0" width="50" height="34"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-wS-Ywa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0u-dI-i52">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYD-CQ-iUc">
+                                                                <rect key="frame" x="250" y="0.0" width="50" height="34"/>
+                                                                <color key="backgroundColor" red="0.094117648900000003" green="0.094117648900000003" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="5eX-rf-yoj"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="인증번호">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="sendAuthNumButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kqv-8N-d82"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="5eX-rf-yoj"/>
+                                                            <constraint firstAttribute="width" constant="300" id="RuD-pi-Abc"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="인증번호">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경고문" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CV-dN-nFa">
+                                                        <rect key="frame" x="0.0" y="39" width="300" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="RuD-pi-Abc"/>
-                                                </constraints>
                                             </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HF1-c6-IB7">
+                                        <rect key="frame" x="0.0" y="108" width="300" height="52.5"/>
+                                        <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UKv-Vy-rk8">
-                                                <rect key="frame" x="0.0" y="54" width="300" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="인증번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwQ-pD-oyV">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
@@ -64,39 +84,72 @@
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2c-Fm-AVz">
                                                         <rect key="frame" x="250" y="0.0" width="50" height="34"/>
+                                                        <color key="backgroundColor" red="0.40000003579999999" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="AeT-ET-Fjr"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="인증하기">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="authenticateButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BSx-Bq-XNp"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="Qni-mz-1h3"/>
                                                 </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경고문" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2A-pa-eSM">
+                                                <rect key="frame" x="0.0" y="39" width="300" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDr-Ys-QTk">
+                                <rect key="frame" x="57" y="264.5" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.55686277149999996" green="0.55686277149999996" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DW6-CV-R16"/>
+                                    <constraint firstAttribute="width" constant="300" id="QT2-Ln-Nwm"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="회원가입 완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeRegistrationButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yL7-aK-aKI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.1725490093" green="0.1725490093" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6S1-GA-hMU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MCv-JF-r8k"/>
                             <constraint firstItem="6S1-GA-hMU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="RsW-T1-BxX"/>
+                            <constraint firstItem="qDr-Ys-QTk" firstAttribute="top" secondItem="6S1-GA-hMU" secondAttribute="bottom" constant="40" id="jFA-Jt-186"/>
+                            <constraint firstItem="qDr-Ys-QTk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="sy9-3K-Ug3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authNumNoticeLabel" destination="a2A-pa-eSM" id="hIZ-QJ-p8k"/>
+                        <outlet property="authNumTextField" destination="QwQ-pD-oyV" id="x7Q-Nh-xXI"/>
+                        <outlet property="authenticateButton" destination="j2c-Fm-AVz" id="rF2-iA-NZR"/>
+                        <outlet property="completeRegistrationButton" destination="qDr-Ys-QTk" id="1a9-Hj-hqr"/>
                         <outlet property="emailIdTextField" destination="W0u-dI-i52" id="UOU-8D-RDh"/>
+                        <outlet property="emailNoticeLabel" destination="0CV-dN-nFa" id="drS-fh-aX5"/>
+                        <outlet property="sendAuthNumButton" destination="eYD-CQ-iUc" id="dcG-CU-zkj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="138"/>
+            <point key="canvasLocation" x="-14" y="20"/>
         </scene>
     </scenes>
 </document>
