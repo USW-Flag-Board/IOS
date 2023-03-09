@@ -51,6 +51,11 @@ class RegisterInformationController: UIViewController {
     // MARK: Functions
     func setStyles() {
         nextButton.setCornerRound()
+        nameTextField.setRegisterStyle(placeholder: "이름")
+        nickNameTextField.setRegisterStyle(placeholder: "닉네임")
+        majorTextField.setRegisterStyle(placeholder: "전공")
+        studentIdTextField.setRegisterStyle(placeholder: "학번")
+        phoneNumberTextField.setRegisterStyle(placeholder: "전화번호")
     }
     
     func setOptions() {
@@ -66,6 +71,7 @@ class RegisterInformationController: UIViewController {
         phoneNumberTextField.addTarget(self,
                                        action: #selector(checkTextField), for: .editingDidEnd)
         
+        // picker view options
         let majorPicker = UIPickerView()
         majorPicker.delegate = self
         self.majorTextField.inputView = majorPicker

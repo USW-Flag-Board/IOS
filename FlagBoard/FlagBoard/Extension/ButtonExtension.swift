@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     func setCornerRound() {
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = self.frame.size.height / 2
     }
     
     func setButtonEnable(to: Bool) {

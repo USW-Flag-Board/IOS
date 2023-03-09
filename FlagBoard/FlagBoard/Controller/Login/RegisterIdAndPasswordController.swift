@@ -53,6 +53,9 @@ class RegisterIdAndPasswordController: UIViewController {
     // MARK: Functions
     func setStyles() {
         nextButton.setCornerRound()
+        idTextField.setRegisterStyle(placeholder: "아이디")
+        passwordTextField.setRegisterStyle(placeholder: "비밀번호")
+        reconfirmPasswordTextField.setRegisterStyle(placeholder: "비밀번호 확인")
     }
     
     func setOptions() {
