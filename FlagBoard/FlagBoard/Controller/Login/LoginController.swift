@@ -29,10 +29,12 @@ class LoginController: UIViewController {
     
     //MARK: @IBAction Functions
     @IBAction func registerButtonPressed(_ sender: Any) {
-        let registerIdAndPasswordStoryboard = UIStoryboard(name: "RegisterIdAndPasswordView", bundle: nil)
-        guard let RegisterIdAndPasswordViewController = registerIdAndPasswordStoryboard.instantiateViewController(withIdentifier: "RegisterIdAndPasswordVC") as? RegisterIdAndPasswordController else { return }
+        let agreementStoryboard = UIStoryboard(name: "AgreementView", bundle: nil)
+        guard let agreementViewController = agreementStoryboard
+            .instantiateViewController(withIdentifier: "AgreementVC")
+                as? AgreementController else { return }
 
-        self.navigationController?.pushViewController(RegisterIdAndPasswordViewController, animated: true)
+        self.navigationController?.pushViewController(agreementViewController, animated: true)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {

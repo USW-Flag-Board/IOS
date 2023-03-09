@@ -64,20 +64,28 @@ class EmailVerifyController: UIViewController {
     
     @IBAction func completeRegistrationButtonPressed(_ sender: UIButton) {
         
+        if let loginViewController = navigationController?.viewControllers[1] {
+            navigationController?.popToViewController(loginViewController, animated: true)
+        }
+
     }
     
     
     // MARK: Functions
     func setStyles() {
-        let addressLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-        
-        addressLabel.text = "@suwon.ac.kr"
+        let addressLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
+        addressLabel.textColor = UIColor.white
+        addressLabel.font = UIFont.systemFont(ofSize: 13)
+        addressLabel.text = "@suwon.ac.kr   "
         emailIdTextField.rightView = addressLabel
         emailIdTextField.rightViewMode = .always
         
         completeRegistrationButton.setCornerRound()
         sendAuthNumButton.setCornerRound()
         authenticateButton.setCornerRound()
+        
+        emailIdTextField.setRegisterStyle(placeholder: "이메일")
+        authNumTextField.setRegisterStyle(placeholder: "인증번호")
     }
     
     func setOptions() {
