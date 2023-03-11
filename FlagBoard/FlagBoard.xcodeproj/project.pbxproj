@@ -24,6 +24,8 @@
 		2C56826B298BB8DC00789F31 /* MembersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56826A298BB8DC00789F31 /* MembersRouter.swift */; };
 		2C56826D2990E03400789F31 /* AgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56826C2990E03400789F31 /* AgreementController.swift */; };
 		2CB9582929B9B2EF00B619EA /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9582829B9B2EF00B619EA /* TextFieldExtension.swift */; };
+		2CB9582C29BC036D00B619EA /* SettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9582B29BC036D00B619EA /* SettingView.storyboard */; };
+		2CB9583229BC03BB00B619EA /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9583129BC03BB00B619EA /* SettingController.swift */; };
 		2CC1591729911F4800A59184 /* RegisterIdAndPasswordView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC1591629911F4800A59184 /* RegisterIdAndPasswordView.storyboard */; };
 		2CC15919299230BE00A59184 /* JoinTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC15918299230BE00A59184 /* JoinTypeController.swift */; };
 		2CC1591B299230CC00A59184 /* JoinTypeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC1591A299230CC00A59184 /* JoinTypeView.storyboard */; };
@@ -81,6 +83,8 @@
 		2C56826A298BB8DC00789F31 /* MembersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRouter.swift; sourceTree = "<group>"; };
 		2C56826C2990E03400789F31 /* AgreementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementController.swift; sourceTree = "<group>"; };
 		2CB9582829B9B2EF00B619EA /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		2CB9582B29BC036D00B619EA /* SettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingView.storyboard; sourceTree = "<group>"; };
+		2CB9583129BC03BB00B619EA /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CC1591629911F4800A59184 /* RegisterIdAndPasswordView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIdAndPasswordView.storyboard; sourceTree = "<group>"; };
 		2CC15918299230BE00A59184 /* JoinTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTypeController.swift; sourceTree = "<group>"; };
 		2CC1591A299230CC00A59184 /* JoinTypeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinTypeView.storyboard; sourceTree = "<group>"; };
@@ -215,6 +219,22 @@
 			path = Interceptor;
 			sourceTree = "<group>";
 		};
+		2CB9582A29BC035700B619EA /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9582B29BC036D00B619EA /* SettingView.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		2CB9582D29BC037800B619EA /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9583129BC03BB00B619EA /* SettingController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		2CDEAA7E28F59CC900464E30 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +336,7 @@
 		2CE968EA28EFB9A000E2D068 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CB9582A29BC035700B619EA /* Setting */,
 				2C422C37293AE2240015CE9D /* Login */,
 				2CDEAA8028F59E0C00464E30 /* SideMenu */,
 				2CE968FE28EFBE1800E2D068 /* Base.lproj */,
@@ -328,6 +349,7 @@
 		2CE968EB28EFB9A500E2D068 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CB9582D29BC037800B619EA /* Setting */,
 				2C422C36293AE1430015CE9D /* Login */,
 				2CDEAA7F28F59CD900464E30 /* TabBar */,
 				2CDEAA7E28F59CC900464E30 /* SideMenu */,
@@ -484,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB9582C29BC036D00B619EA /* SettingView.storyboard in Resources */,
 				2CFDE779297917B2009695BA /* EmailVerifyView.storyboard in Resources */,
 				53FD972328F5D8D1002F9190 /* BoardView.storyboard in Resources */,
 				53733254290C908C00D6DE25 /* FreeBoardXibViewCell.xib in Resources */,
@@ -583,6 +606,7 @@
 				2CE968E528EFB88000E2D068 /* ButtonExtension.swift in Sources */,
 				2C56825E298B881500789F31 /* OAuthAuthenticator.swift in Sources */,
 				53733250290C8B3100D6DE25 /* FreeBoardViewController.swift in Sources */,
+				2CB9583229BC03BB00B619EA /* SettingController.swift in Sources */,
 				2C422C312929035C0015CE9D /* BulletinBoardDetailModel.swift in Sources */,
 				2C56825D298B881500789F31 /* OAuthCredential.swift in Sources */,
 				53FD971828F58F6B002F9190 /* BoardSelectionTableViewCell.swift in Sources */,

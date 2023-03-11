@@ -12,7 +12,7 @@ class SideMenuController: UIViewController {
     }
     
     //MARK: Functions
-    @IBAction func didTabLoginButton(_ sender: Any) {
+    @IBAction func loginButtonPressed(_ sender: Any) {
         let loginStoryboard = UIStoryboard(name: "LoginView", bundle: nil)
         guard let loginViewController = loginStoryboard
             .instantiateViewController(withIdentifier: "LoginVC")
@@ -20,12 +20,12 @@ class SideMenuController: UIViewController {
         
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }
-    @IBAction func registerButtonPressed(_ sender: UIButton) {
-        let agreementStoryboard = UIStoryboard(name: "AgreementView", bundle: nil)
-        guard let agreementViewController = agreementStoryboard
-            .instantiateViewController(withIdentifier: "AgreementVC")
-                as? AgreementController else { return }
-
-        self.navigationController?.pushViewController(agreementViewController, animated: true)
+    @IBAction func settingButtonPressed(_ sender: Any) {
+        let settingStoryboard = UIStoryboard(name: "SettingView", bundle: nil)
+        guard let settingViewController = settingStoryboard
+            .instantiateViewController(withIdentifier: "SettingVC")
+                as? SettingController else { return }
+        
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
 }
