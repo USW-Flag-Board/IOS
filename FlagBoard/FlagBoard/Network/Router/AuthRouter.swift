@@ -15,7 +15,7 @@ enum AuthRouter: URLRequestConvertible {
     case checkId(id: String)
     case checkEmail(email: String)
     case sendAuthInfo(id: String, password: String, name: String, studentId: String,
-                      email: String, major: String, joinType: String)
+                      email: String, major: String, joinType: String, phoneNumber: String, nickName: String)
     case signUp(email: String, certification: String)
     case login(id: String, password: String)
     case reissueToken(accessToken: String, refreshToken: String)
@@ -74,7 +74,7 @@ enum AuthRouter: URLRequestConvertible {
                 params["email"] = email
                 return params
                 
-            case let .sendAuthInfo(id, password, name, studentId, email, major, joinType):
+            case let .sendAuthInfo(id, password, name, studentId, email, major, joinType, phoneNumber, nickName):
                 var params = Parameters()
                 params["loginId"] = id
                 params["password"] = password
@@ -83,6 +83,8 @@ enum AuthRouter: URLRequestConvertible {
                 params["studentId"] = studentId
                 params["major"] = major
                 params["joinType"] = joinType
+                params["nickName"] = nickName
+                params["phoneNumber"] = phoneNumber
                 return params
                 
             case let .signUp(email, certification):

@@ -60,8 +60,15 @@ class OAuthAuthenticator: Authenticator {
                     failDueToAuthenticationError error: Error) -> Bool {
         print("OAuthAuthenticator - didRequest() called")
        
-        // 서버에서 401이 떨어지면 refresh
-        return response.statusCode == 401
+        // 서버에서 400, 401이 떨어지면 refresh
+        switch response.statusCode {
+        case 400:
+            return true
+        case 401:
+            return true
+        default:
+            return false
+        }
     }
 
     func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: OAuthCredential)

@@ -128,11 +128,13 @@ class EmailVerifyController: UIViewController {
         guard let studentId = studentId else { return }
         guard let major = major else { return }
         guard let joinType = joinType else { return }
+        guard let phoneNumber = phoneNumber else { return }
+        guard let nickName = nickName else { return }
         
         AlamofireManager
             .shared
             .session
-            .request(AuthRouter.sendAuthInfo(id: id, password: password, name: name, studentId: studentId, email: email, major: major, joinType: joinType)).response { response in
+            .request(AuthRouter.sendAuthInfo(id: id, password: password, name: name, studentId: studentId, email: email, major: major, joinType: joinType, phoneNumber: phoneNumber, nickName: nickName)).response { response in
                 
                 guard let statusCode = response.response?.statusCode else { return }
                 

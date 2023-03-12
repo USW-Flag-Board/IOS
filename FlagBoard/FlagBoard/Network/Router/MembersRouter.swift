@@ -12,7 +12,8 @@ import Alamofire
 // 서버에서 Members에 해당하는 라우터
 enum MembersRouter: URLRequestConvertible {
     
-    // 내 상세정보 보기(서버 미구현)
+    // 내 상세정보 보기
+    case getMyProfile
     case withdrawal(password: String)
     
     var baseURL: URL {
@@ -22,6 +23,8 @@ enum MembersRouter: URLRequestConvertible {
 
     var path: String {
         switch self {
+        case .getMyProfile:
+            return "members"
         case .withdrawal:
             return "/members"
         }
@@ -30,14 +33,18 @@ enum MembersRouter: URLRequestConvertible {
 
     var method: HTTPMethod {
         switch self {
+        case .getMyProfile:
+            return .get
         case .withdrawal:
             return .delete
         }
     }
 
 
-        var parameters: Parameters {
+        var parameters: Parameters? {
             switch self {
+            case .getMyProfile:
+                return nil
             case let .withdrawal(password):
                 var params = Parameters()
                 params["currentPassword"] = password

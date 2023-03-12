@@ -10,12 +10,12 @@ import Foundation
 // MARK: - TokenData
 struct TokenData: Codable {
     let message: String
-    let payload: Payload
+    let payload: tokenPayload
     let status: String
 }
 
 // MARK: - Payload
-struct Payload: Codable {
+struct tokenPayload: Codable {
     let accessToken: String
     let accessTokenExpiresIn: Int
     let grantType, refreshToken: String
