@@ -9,6 +9,14 @@ import Alamofire
 class ProfileController: UIViewController {
 
     //MARK: IBOutlets
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var profileImgUrlLabel: UILabel!
+    @IBOutlet weak var studenIdLabel: UILabel!
     
     //MARK: Properties
     
