@@ -15,31 +15,31 @@ enum AuthRouter: URLRequestConvertible {
     case checkId(id: String)
     case checkEmail(email: String)
     case sendAuthInfo(id: String, password: String, name: String, studentId: String,
-                      email: String, major: String, joinType: String)
+                      email: String, major: String, joinType: String, phoneNumber: String, nickName: String)
     case signUp(email: String, certification: String)
     case login(id: String, password: String)
-    case tokenRefresh(accessToken: String, refreshToken: String)
+    case reissueToken(accessToken: String, refreshToken: String)
     
     
     var baseURL: URL {
-        return URL(string: API.BASE_URL)!
+        return URL(string: AlamofireManager.BASE_URL)!
     }
     
     
     var path: String {
         switch self {
         case .checkId:
-            return "/api/auth/check/id"
+            return "/auth/check/id"
         case .checkEmail:
-            return "/api/auth/check/email"
+            return "/auth/check/email"
         case .sendAuthInfo:
-            return "/api/auth/join"
+            return "/auth/join"
         case .signUp:
-            return "/api/auth/sign-up"
+            return "/auth/sign-up"
         case .login:
-            return "/api/auth/join"
-        case .tokenRefresh:
-            return "/api/auth/reissue"
+            return "/auth/login"
+        case .reissueToken:
+            return "/auth/reissue"
         }
     }
     
@@ -56,7 +56,7 @@ enum AuthRouter: URLRequestConvertible {
             return .post
         case .login:
             return .post
-        case .tokenRefresh:
+        case .reissueToken:
             return .post
         }
     }
@@ -74,7 +74,7 @@ enum AuthRouter: URLRequestConvertible {
                 params["email"] = email
                 return params
                 
-            case let .sendAuthInfo(id, password, name, studentId, email, major, joinType):
+            case let .sendAuthInfo(id, password, name, studentId, email, major, joinType, phoneNumber, nickName):
                 var params = Parameters()
                 params["loginId"] = id
                 params["password"] = password
@@ -83,6 +83,8 @@ enum AuthRouter: URLRequestConvertible {
                 params["studentId"] = studentId
                 params["major"] = major
                 params["joinType"] = joinType
+                params["nickName"] = nickName
+                params["phoneNumber"] = phoneNumber
                 return params
                 
             case let .signUp(email, certification):
@@ -97,7 +99,7 @@ enum AuthRouter: URLRequestConvertible {
                 params["password"] = password
                 return params
                 
-            case let .tokenRefresh(accessToken, refreshToken):
+            case let .reissueToken(accessToken, refreshToken):
                 var params = Parameters()
                 params["accessToken"] = accessToken
                 params["refreshToken"] = refreshToken

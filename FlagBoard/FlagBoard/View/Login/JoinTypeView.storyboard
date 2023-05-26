@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Join Type Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="JoinTypeVC" id="Y6W-OH-hqX" customClass="JoinTypeController" customModule="FlagBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="e7l-ZM-PhX">
+                                <rect key="frame" x="44.5" y="64" width="325" height="289.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 구분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKt-B4-yjw">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="We5-RN-9fF" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="77.5" width="325" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="일반회원"/>
+                                        <connections>
+                                            <outletCollection property="otherButtons" destination="bYj-wy-hBS" id="ESh-Gs-O1e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYj-wy-hBS" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="163.5" width="325" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="FLAG 동아리원"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB8-a5-5pP">
+                                        <rect key="frame" x="0.0" y="249.5" width="325" height="40"/>
+                                        <color key="backgroundColor" red="0.55686277149999996" green="0.55686277149999996" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7db-gw-hes"/>
+                                            <constraint firstAttribute="width" constant="325" id="CnW-IU-khL"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wkv-18-iDF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bYj-wy-hBS" secondAttribute="trailing" id="2cM-Xb-NGl"/>
+                                    <constraint firstAttribute="trailing" secondItem="We5-RN-9fF" secondAttribute="trailing" id="5c4-oc-HLQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="OKt-B4-yjw" secondAttribute="trailing" id="qeo-tl-Wt9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.1725490391" green="0.1725490391" blue="0.1725490391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e7l-ZM-PhX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="PGu-a6-YPn"/>
+                            <constraint firstItem="e7l-ZM-PhX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wlO-CM-FoB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flagMemberRadioButton" destination="bYj-wy-hBS" id="XUT-32-HIT"/>
+                        <outlet property="nextButton" destination="uB8-a5-5pP" id="OrA-W2-N7u"/>
+                        <outlet property="normalMemberRadioButton" destination="We5-RN-9fF" id="sY1-xl-Nyr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+</document>
